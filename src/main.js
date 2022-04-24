@@ -3,6 +3,51 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import specific icons */
+import { 
+  faBars,
+  faEnvelope
+} from '@fortawesome/free-solid-svg-icons'
+
+import { 
+  faJsSquare,
+  faVuejs,
+  faReact,
+  faHtml5,
+  faCss3,
+  faSass,
+  faNode,
+  faLaravel,
+  faLinkedin,
+  faGithub
+} from '@fortawesome/free-brands-svg-icons'
+
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+/* add icons to the library */
+library.add(
+  faBars, 
+  faJsSquare, 
+  faVuejs, 
+  faReact,
+  faHtml5,
+  faCss3,
+  faSass,
+  faNode,
+  faLaravel,
+  faLinkedin,
+  faGithub,
+  faEnvelope
+)
+
+/* add font awesome icon component */
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.config.productionTip = false
 
 new Vue({
