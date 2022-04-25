@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavBar/>
-    <div class="page">
+    <div class="content">
       <router-view/>
     </div>
   </div>
@@ -19,35 +19,16 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/styles/variables.scss';
-
-body {
-  margin: 0;
-  background: #171923;
-}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $white;
-}
-
-.page {
-  margin: 30px 100px;
-
-  @media only screen and (max-width: $tablet-lg) {
-    margin: $margin-lg $margin-xl;
-  }
-
-  @media only screen and (max-width: $tablet-sm) {
-    margin: $margin-lg $margin;
-  }
-
-  @media only screen and (max-width: $mobile) {
-    margin: $margin-lg $margin-sm;
-  }
+  background: $black;
+  min-height: 100vh;
 }
 
 </style>

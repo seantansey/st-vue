@@ -9,7 +9,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 /* import specific icons */
 import { 
   faBars,
-  faEnvelope
+  faEnvelope,
+  faArrowRight,
+  faCalendar,
+  faLocationDot,
+  faPaperPlane,
+  faGem
 } from '@fortawesome/free-solid-svg-icons'
 
 import { 
@@ -22,7 +27,8 @@ import {
   faNode,
   faLaravel,
   faLinkedin,
-  faGithub
+  faGithub,
+  faPhp
 } from '@fortawesome/free-brands-svg-icons'
 
 
@@ -42,7 +48,13 @@ library.add(
   faLaravel,
   faLinkedin,
   faGithub,
-  faEnvelope
+  faEnvelope,
+  faArrowRight,
+  faCalendar,
+  faLocationDot,
+  faPaperPlane,
+  faGem,
+  faPhp
 )
 
 /* add font awesome icon component */

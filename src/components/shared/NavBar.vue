@@ -9,12 +9,12 @@
                     {{ link }}
                 </router-link>
             </div>
-            <button class="menu-button" @click="toggleLinks">
+            <button class="menu-button" @click="toggleMenu">
                 <font-awesome-icon icon="fa-solid fa-bars" size="lg"/>
             </button>
         </div>  
         <div v-if="menuOpen" class="navbar-extended">
-            <router-link v-for="link in links" :to="link" :key="link" class="router-link">
+            <router-link v-for="link in links" :to="link" :key="link" @click.native="toggleMenu" class="router-link">
                 {{ link }}
             </router-link>
         </div>
@@ -32,7 +32,8 @@ export default {
       }
   },
   methods: {
-      toggleLinks() {
+      toggleMenu() {
+          console.log('hit')
           this.menuOpen = !this.menuOpen
       }
   }
@@ -43,11 +44,17 @@ export default {
 @import '@/styles/variables.scss';
 
     nav {
-        padding: 20px;
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        background: $black;
+        padding: $padding $padding-lg;
         border-bottom: 0.5px solid #2c3e50;
-
+        // box-shadow: 0 0 5px 3px black; // revist and create a variable
 
         .navbar {
+            flex: 1;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -88,7 +95,7 @@ export default {
         .router-link {
             text-decoration: none;
             color: $grey;
-            margin: 0 $margin;
+            margin-left: $margin-xl;
 
             @media only screen and (max-width: $tablet-sm) {
                 margin: $margin-sm 0;
@@ -104,11 +111,10 @@ export default {
         }
 
         .home-link {
-            color: $green;
+            color: $white;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
-            margin-right: 20px;            
         }
 
         .home-link:hover {

@@ -1,20 +1,29 @@
 // For Shared Variables accross the site
 
+// ui
+$navbar-height: 75px;
+
 // breakpoints
 $mobile: 480px;
 $tablet-sm: 768px;
 $tablet-lg: 1024px;
 
-
 // margins
+$margin-xs: 5px;
 $margin-sm: 10px;
 $margin: 20px;
 $margin-lg: 30px;
 $margin-xl: 50px;
 
-
+// padding
+$padding-xs: 5px;
+$padding-sm: 10px;
+$padding: 20px;
+$padding-lg: 30px;
+$padding-xl: 50px;
 
 // colors
+$black: #171923;
 $white: #e7e8f2;
-$grey: #2c3e50;
+$grey: #64748b;
 $green: #42b983;
