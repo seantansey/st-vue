@@ -1,7 +1,7 @@
 <template>
     <div class="about-introduction">
       <div class="about-content">
-        <h3>I'm a Software Engineer specializing in Front-end development based in Denver, Colorado.</h3>
+        <h3>I'm a Software Engineer specializing in Front-end development based out of Denver, Colorado.</h3>
         <p>
           I enjoy building solutions for complex front end UI problems.
           I'm of the belief that simple, explict, readable and maintable code is more important than minor performance improvements made by writing condensed "clever" code.
@@ -59,7 +59,7 @@ export default {
 
         h3 {
           color: $green;
-          margin-bottom: 0;
+          margin: 0;
         }
 
         a {

@@ -3,18 +3,65 @@
    <h2>Skills</h2>
     <h3>Front-end development</h3>
     <div class="logo-row">
-      <font-awesome-icon icon="fa-brands fa-js-square" size="7x" class="js logo" />
-      <font-awesome-icon icon="fa-brands fa-vuejs" size="7x" class="vue logo"/>
-      <font-awesome-icon icon="fa-brands fa-react" size="7x" class="logo"/>
-      <font-awesome-icon icon="fa-brands fa-html5" size="7x" class="logo"/>
-      <font-awesome-icon icon="fa-brands fa-css3" size="7x" class="logo"/>
-      <font-awesome-icon icon="fa-brands fa-sass" size="7x" class="logo"/>
+      <div class="icon">
+        <i class="devicon-javascript-plain colored"></i>
+        JavaScript
+      </div>
+      <div>
+        <i class="devicon-vuejs-plain colored"></i>
+        Vue
+      </div>
+      <div>
+        <i class="devicon-svelte-plain colored"></i>
+        Svelte
+      </div>
+      <div>
+        <i class="devicon-react-original colored"></i>
+        React
+      </div>
+      <div>
+        <i class="devicon-html5-plain colored"></i>
+        HTML
+      </div>
+      <div>
+        <i class="devicon-css3-plain colored"></i>
+        CSS
+      </div>
+      <div>
+        <i class="devicon-sass-plain colored"></i>
+        Sass
+      </div>
+      <div>
+        <i class="devicon-tailwindcss-original-wordmark colored"></i>
+        Tailwind
+      </div>
     </div>
     <h3>Back-end development</h3>
     <div class="logo-row">
-      <font-awesome-icon icon="fa-brands fa-node" size="7x" class="logo" />
-      <font-awesome-icon icon="fa-brands fa-laravel" size="7x" class="logo"/>
-      <font-awesome-icon icon="fa-brands fa-php" size="7x" class="logo"/>
+      <div>
+        <i class="devicon-nodejs-plain colored"></i>
+        Node.js
+      </div>
+      <div>
+        <i class="devicon-laravel-plain colored"></i>
+        Laravel
+      </div>
+       <div>
+        <i class="devicon-php-plain colored"></i>
+        Php
+      </div>
+       <div>
+        <i class="devicon-rails-plain colored"></i>
+        Ruby on Rails
+      </div>
+       <div>
+        <i class="devicon-mysql-plain colored"></i>
+        MySQL
+      </div>
+       <div>
+        <i class="devicon-postgresql-plain colored"></i>
+        PostgreSQL
+      </div>
     </div>
     <h3>Other</h3>
 
@@ -44,22 +91,22 @@ export default {
 
         h3 {
             color: $green;
-            margin-bottom: 0;
+            margin: $margin 0 $margin-sm 0;
         }
 
         .logo-row {
-            .js {
-                color: #f7df1e;
-            }
+          display: flex;
+          flex-wrap: wrap;
+          text-align: center;
+          font-weight: bold;
+          font-size: 14px;
 
-            .vue {
-                color: $green;
-            }
 
-            .logo {
-                margin: $margin-sm;
-            }
-
+          i {
+            display: block;
+            font-size: 80px;
+            margin: $margin-sm;
+          }
 
         }
     }

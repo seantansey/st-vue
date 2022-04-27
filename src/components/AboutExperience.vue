@@ -6,7 +6,7 @@
             <font-awesome-icon icon="fa-solid fa-calendar" />
             <span class="job-data-text">October 2020 - Present</span>
             <font-awesome-icon icon="fa-solid fa-location-dot" />
-            <span class="job-data-text">Boulder, Colorado</span>
+            <span class="job-data-text">Boulder, Colorado / Remote</span>
         </div>
         <div class="job-title">
             <font-awesome-icon icon="fa-solid fa-arrow-right" />
@@ -61,7 +61,7 @@ export default {
         margin-top: $margin-xl;
 
         h3 {
-            margin-bottom: 0;
+            margin-bottom: $margin-xs;
             color: $green;
         }
 
