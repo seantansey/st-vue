@@ -1,4 +1,4 @@
-# personal-site
+# st-vue
 
 ## Project setup
 ```
