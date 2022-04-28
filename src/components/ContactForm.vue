@@ -40,8 +40,28 @@ export default {
           if (!name || !email, !subject, !message) {
               console.log('missing')
           }
-          console.log(name, email, subject, message)
+          this.api({ name, email, subject, message })
+
           // cant send email via js, need to do this on the server
+      },
+      async api({ name, email, subject, message }) {
+
+          const body = {
+              name,
+              email,
+              subject,
+              message
+          }
+          console.log({body})
+          const response = await fetch('http://localhost:3000/contact',{
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(body)
+          })
+          const json = await response.json()
+          console.log(json)
       }
   }
 }

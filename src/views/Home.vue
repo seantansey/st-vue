@@ -7,12 +7,12 @@
     </div>
     <div class="pipe-wrapper">
       <div class="pipe-outlet">
+        <div class="pipeline-1"></div>
+        <div class="pipeline-2"></div>
         <div class="pipeline-3"></div>
-        <div class="pipeline-4"></div>
-        <div class="pipeline-5"></div>
       </div>
-      <div class= "pipeline-2"></div>
-      <div class="pipeline-1"></div>
+      <div class= "pipeline-4"></div>
+      <div class="pipeline-5"></div>
     </div>
      <div class="logo-wrapper">
       <div class="logo-square">
@@ -21,9 +21,6 @@
       </div>
       <div class="logo-shadow"></div>
     </div>
-
-     
-
   </div>
 </template>
 
@@ -79,7 +76,7 @@ export default {
         animation-iteration-count: 1;
         animation-duration: 3s;
         animation-timing-function: ease-in;
-        z-index: 2;
+        z-index: 1;
 
         .logo-text {
           position: absolute;
@@ -96,7 +93,7 @@ export default {
           animation-iteration-count: 1;
           animation-duration: 3s;
           animation-timing-function: ease-in;
-          z-index: 2;
+          z-index: 1;
         }
 
         .logo-text-shadow {
@@ -107,7 +104,6 @@ export default {
           font-size: 150px;
           color: $black;
         }
-
       }
 
       .logo-shadow {
@@ -127,8 +123,8 @@ export default {
     }
 
     .pipeline-1,
+    .pipeline-2,
     .pipeline-3,
-    .pipeline-4,
     .pipeline-5 {
       height: 40px;
       width: 5px;
@@ -144,7 +140,7 @@ export default {
 
     }
 
-    .pipeline-2 {
+    .pipeline-4 {
       height: 5px;
       width: 220px;
       background: #1A1C26;
@@ -162,8 +158,6 @@ export default {
       width: 220px;
       justify-content: space-between;
     }
-
-    
 
     .router-links {
       width: 260px;
@@ -193,7 +187,6 @@ export default {
           0 0 50px rgba($green, 1); 
       }
     }
-
 
       @keyframes flashingLogo {
         0% {
@@ -232,8 +225,6 @@ export default {
         }
       }
 
-
-
       @keyframes fadeInOpacity {
         0% {
           opacity: 0;
@@ -248,32 +239,55 @@ export default {
   }
 
   .home.route-selected {
-
     .router-links,
     .pipe-wrapper {
       opacity: 0;
       animation-name: fadeOutOpacity;
       animation-iteration-count: 1;
       animation-duration: 0.1s;
-      animation-timing-function: ease-in;
+      animation-timing-function: ease-out;
     }
 
-    .logo-square {
+    .logo-square,
+    .logo-shadow,
+    .logo-text,
+    .logo-text-shadow {
       opacity: 0;
       animation-name: fadeOutOpacity;
       animation-iteration-count: 1;
-      animation-duration: 0.8s;
-      animation-timing-function: ease-in;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
     }
-
-    .logo-shadow {
-      display: none;
-    }
-
 
      @keyframes fadeOutOpacity {
         0% {
           opacity: 1
+        }
+        3% {
+          opacity: 0.2;
+          border-color: #2e6e56;
+          color: #2e6e56;
+        }
+        6% {
+          opacity: 0.4;
+          border-color: #2e6e56;
+          color: #2e6e56;
+        }
+        9% {
+          opacity: 1;
+        }
+        12% {
+          opacity: 0.2;
+          border-color: #2e6e56;
+          color: #2e6e56;
+        }
+        15% {
+          opacity: 0.4;
+          border-color: #2e6e56;
+          color: #2e6e56;
+        }
+        18% {
+          opacity: 1;
         }
         100% {
           opacity: 0;

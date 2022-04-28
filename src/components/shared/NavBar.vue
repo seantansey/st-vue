@@ -49,7 +49,7 @@ export default {
         display: flex;
         flex-direction: column;
         background: $black;
-        padding: $padding $padding-lg;
+        padding: $padding-sm $padding-lg;
         opacity: 0.9;
         font-weight: bold;
         box-shadow: 0 0 5px 3px #13151d; // revist and create a variable, only show when scrolled?
@@ -131,6 +131,11 @@ export default {
             border-radius: 5px;
             text-decoration: none;
             position: relative;
+             box-shadow:
+                inset 0 0 5px rgba($green, 1),
+                0 0 5px rgba($green, 1);
+            text-shadow: 
+                0 0 5px rgba($green, 1);
 
             .website-logo-text {
                 position: absolute;
@@ -144,10 +149,10 @@ export default {
 
         .website-logo:hover {
             box-shadow:
-                inset 0 0 5px rgba($green, 1),
-                0 0 5px rgba($green, 1);
+                inset 0 0 10px rgba($green, 1),
+                0 0 10px rgba($green, 1);
             text-shadow: 
-                0 0 5px rgba($green, 1),
+                0 0 10px rgba($green, 1),
 
 
         }
