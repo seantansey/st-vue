@@ -48,7 +48,7 @@ export default {
         top: 0;
         display: flex;
         flex-direction: column;
-        background: $black;
+        background: $bg;
         padding: $padding-sm $padding-lg;
         opacity: 0.9;
         font-weight: bold;
@@ -72,7 +72,7 @@ export default {
                 display: none;
                 border: none;
                 background: none;
-                color: $green;
+                color: $secondary;
 
                 @media only screen and (max-width: $tablet-sm) {
                 display: block;
@@ -80,16 +80,16 @@ export default {
             }
 
             .menu-button:hover {
-                color: $white;
+                color: $primary;
                 cursor: pointer;
             }
 
             .green {
-                color: $green;
+                color: $secondary;
             }
 
             .grey {
-                color: $grey;
+                color: $tertiary;
             }
         }
 
@@ -104,7 +104,7 @@ export default {
 
         .router-link {
             text-decoration: none;
-            color: $grey;
+            color: $tertiary;
             margin-left: $margin-xl;
             transition: color 1.5s, text-shadow 1.5s;
 
@@ -115,27 +115,27 @@ export default {
         }
 
         .router-link:hover {
-            color: $white;
+            color: $primary;
             text-shadow: 7px 7px 10px black;
 
         }
 
         .router-link-active {
-            color: $green;
+            color: $secondary;
         }
 
         .website-logo {
             height: 50px;
             width: 50px;
-            border: 3px solid $green;
+            border: 3px solid $secondary;
             border-radius: 5px;
             text-decoration: none;
             position: relative;
-             box-shadow:
-                inset 0 0 5px rgba($green, 1),
-                0 0 5px rgba($green, 1);
+            box-shadow:
+                inset 0 0 5px rgba($secondary, 1),
+                0 0 5px rgba($secondary, 1);
             text-shadow: 
-                0 0 5px rgba($green, 1);
+                0 0 5px rgba($secondary, 1);
 
             .website-logo-text {
                 position: absolute;
@@ -143,16 +143,16 @@ export default {
                 right: 5px;
                 font-size: 25px;
                 font-weight: bold;
-                color: $green;
+                color: $secondary;
             }
         }
 
         .website-logo:hover {
             box-shadow:
-                inset 0 0 10px rgba($green, 1),
-                0 0 10px rgba($green, 1);
+                inset 0 0 10px rgba($secondary, 1),
+                0 0 10px rgba($secondary, 1);
             text-shadow: 
-                0 0 10px rgba($green, 1),
+                0 0 10px rgba($secondary, 1),
 
 
         }

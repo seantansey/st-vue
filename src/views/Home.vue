@@ -62,16 +62,16 @@ export default {
       .logo-square {
         height: 300px;
         width: 300px;
-        border: 5px solid $green;
+        border: 5px solid $secondary;
         border-radius: 20px;
         position: relative;
         box-shadow:
-            inset 0 0 5px rgba($green, 5),
-            0 0 5px rgba($green, 5),
-            inset 0 0 10px rgba($green, 1),
-            0 0 10px rgba($green, 1),  
-            inset 0 0 50px rgba($green, 1),
-            0 0 50px rgba($green, 1); 
+            inset 0 0 5px rgba($secondary, 5),
+            0 0 5px rgba($secondary, 5),
+            inset 0 0 10px rgba($secondary, 1),
+            0 0 10px rgba($secondary, 1),  
+            inset 0 0 50px rgba($secondary, 1),
+            0 0 50px rgba($secondary, 1); 
         animation-name: flashingLogo;
         animation-iteration-count: 1;
         animation-duration: 3s;
@@ -84,11 +84,11 @@ export default {
           right: 20px;
           font-weight: bold;
           font-size: 150px;
-          color: $green;
+          color: $secondary;
           text-shadow:
-            0 0 5px rgba($green, 5),
-            0 0 10px rgba($green, 1),
-            0 0 50px rgba($green, 1); 
+            0 0 5px rgba($secondary, 5),
+            0 0 10px rgba($secondary, 1),
+            0 0 50px rgba($secondary, 1); 
           animation-name: flashingLogo;
           animation-iteration-count: 1;
           animation-duration: 3s;
@@ -102,7 +102,7 @@ export default {
           right: 24px;
           font-weight: bold;
           font-size: 150px;
-          color: $black;
+          color: $bg;
         }
       }
 
@@ -134,8 +134,8 @@ export default {
       animation-duration: 6s;
       animation-timing-function: ease-in;
       box-shadow: 
-        0 0 5px rgba($green, 5),
-        inset 0 0 5px rgba($green, 5);
+        0 0 5px rgba($secondary, 5),
+        inset 0 0 5px rgba($secondary, 5);
       float: right;
 
     }
@@ -149,8 +149,8 @@ export default {
       animation-duration: 6s;
       animation-timing-function: ease-in;
       box-shadow: 
-        0 0 5px rgba($green, 5),
-        inset 0 0 5px rgba($green, 5),
+        0 0 5px rgba($secondary, 5),
+        inset 0 0 5px rgba($secondary, 5),
     }
 
     .pipe-outlet {
@@ -167,10 +167,10 @@ export default {
       margin-bottom: $margin-sm;
 
       a {
-        font-size: 16px;
+        font-size: $font-size;
         text-decoration: none;
         font-weight: bold;
-        color: $grey;
+        color: $tertiary;
         transition: color 1.5s, text-shadow 1.5s;
         animation-name: fadeInOpacity;
         animation-iteration-count: 1;
@@ -180,11 +180,11 @@ export default {
 
       a:hover {
         cursor: pointer;
-        color: $green;
+        color: $secondary;
         text-shadow:
-          0 0 5px rgba($green, 5),
-          0 0 10px rgba($green, 1),
-          0 0 50px rgba($green, 1); 
+          0 0 5px rgba($secondary, 5),
+          0 0 10px rgba($secondary, 1),
+          0 0 50px rgba($secondary, 1); 
       }
     }
 

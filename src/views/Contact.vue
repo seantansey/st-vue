@@ -1,18 +1,25 @@
 <template>
   <page>
     <div class="contact">
-        <h1>Contact</h1>
-        <h3>Interested in working together? Have a question? Contact me through any of the means below!</h3>
-        <h4>Social media</h4>
-        <a class="linkedin" href="https://www.linkedin.com/in/seantansey/">
-          <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" class="social-icon"/>
-          <span class="social-text">linkedin.com/in/seantansey</span>
-        </a> 
-        <a class="github" href="https://github.com/stansey92">
-          <font-awesome-icon icon="fa-brands fa-github" size="lg"  class="social-icon" />
-          <span class="social-text">github.com/stansey92</span>
-        </a>
-        <contact-form></contact-form>
+      <h1>Contact</h1>
+      <div class="flex-row">
+        <div class="contact-info">
+          <h3>Interested in working together? Have a question? Contact me through any of the means below!</h3>
+          <h4>Social media</h4>
+          <a class="linkedin" href="https://www.linkedin.com/in/seantansey/">
+            <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" class="social-icon"/>
+            <span class="social-text">linkedin.com/in/seantansey</span>
+          </a> 
+          <a class="github" href="https://github.com/stansey92">
+            <font-awesome-icon icon="fa-brands fa-github" size="lg"  class="social-icon" />
+            <span class="social-text">github.com/stansey92</span>
+          </a>
+        </div>
+        <div class="contact-form-wrapper">
+          <h4>Send a message</h4>
+          <contact-form></contact-form>
+        </div>
+      </div>
     </div>
   </page>
 </template>
@@ -35,24 +42,39 @@ export default {
 @import '@/styles/variables.scss';
 
   .contact {
-    padding: $padding-lg 100px;
-
-    @media only screen and (max-width: $tablet-lg) {
-      padding-left: $padding-xl;
-      padding-right: $padding-xl;
-    }
-
-    @media only screen and (max-width: $mobile) {
-      padding-left: $padding;
-      padding-right: $padding;
-    }
 
     h1 {
-      font-size: 40px;
+      font-size: $font-size-header;
+      border-bottom: 1px solid $tertiary;
+      margin-bottom: 50px;
     }
 
     h3 {
-      color: $green;
+      margin-top: 0;
+      margin-bottom: $margin-sm;
+    }
+
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+
+      @media only screen and (max-width: $tablet-sm) {
+        flex-direction: column;
+      }
+    }
+
+    .contact-info {
+      flex: 1;
+      margin-right: $margin-lg;
+    }
+
+    h1 {
+      font-size: $font-size-header;
+    }
+
+    h3 {
+      color: $secondary;
     }
 
     .social-icon {
@@ -60,7 +82,7 @@ export default {
     }
 
     .social-text {
-      font-size: 16px;
+      font-size: $font-size;
     }
 
     .linkedin {
@@ -71,20 +93,32 @@ export default {
     }
 
     .linkedin:hover {
-      color: $white;
+      color: $primary;
       text-decoration: underline;
     }
 
     .github {
       display: block;
       margin: $margin-sm 0;
-      color: $grey;
+      color: $tertiary;
       text-decoration: none;
     }
 
     .github:hover {
-      color: $green;
+      color: $secondary;
       text-decoration: underline;
+    }
+
+    .contact-form-wrapper {
+      flex: 1;
+
+      h4 {
+        display: none; 
+          @media only screen and (max-width: $tablet-sm) {
+            display: block;
+          }
+      }
+        
     }
   }
 </style>

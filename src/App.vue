@@ -11,8 +11,8 @@
   font-family: Avenir;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $white;
-  background: $black;
+  color: $primary;
+  background: $bg;
   min-height: 100vh;
 }
 </style>

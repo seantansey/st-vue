@@ -1,20 +1,19 @@
 <template>
   <form @submit.prevent="submitForm" class="contact-form">
-    <h4>Contact</h4>
     <div class="form-input">
-        <input v-model="name" type="text">
+        <input v-model="name" type="text" placeholder="George Oscar Bluth, Sr." :class="{ complete: name }">
         <label>Name</label>
     </div>
      <div class="form-input">
-        <input v-model="email" type="email">
+        <input v-model="email" type="email" placeholder="george@bluthcompany.com" :class="{ complete: email }">
         <label>Email</label>
     </div>
      <div class="form-input">
-        <input v-model="subject" type="text">
+        <input v-model="subject" type="text" placeholder="Finances.." :class="{ complete: subject }">
         <label>Subject</label>
     </div>
      <div class="form-input">
-        <textarea v-model="message"></textarea>
+        <textarea v-model="message" placeholder="Well... there’s always money in the banana stand." :class="{ complete: message }"></textarea>
         <label>Message</label>
     </div>
     <button :disabled="!name || !email || !subject || !message" type="submit">
@@ -24,6 +23,8 @@
 </template>
 
 <script>
+import postMessage from '../api/contact.js'
+
 export default {
   name: 'ContactForm',
   data() {
@@ -40,29 +41,8 @@ export default {
           if (!name || !email, !subject, !message) {
               console.log('missing')
           }
-          this.api({ name, email, subject, message })
-
-          // cant send email via js, need to do this on the server
+          postMessage({ name, email, subject, message })
       },
-      async api({ name, email, subject, message }) {
-
-          const body = {
-              name,
-              email,
-              subject,
-              message
-          }
-          console.log({body})
-          const response = await fetch('http://localhost:3000/contact',{
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(body)
-          })
-          const json = await response.json()
-          console.log(json)
-      }
   }
 }
 </script>
@@ -71,58 +51,63 @@ export default {
 @import '@/styles/variables.scss';
 
   .contact-form {
-    padding: $padding 0;
+    flex: 1;
 
     .form-input {
         display: flex;
         flex-direction: column-reverse;
-        margin: $margin 0;
+        margin-bottom: $margin;
 
         label {
             display: block;
-            font-size: 12px;
+            font-size: $font-size-xs;
             margin-bottom: $margin-xs;
+            font-weight: bold;
         }
         
         input,
         textarea {
             background: transparent;
-            border: 1px solid #334155;
-            border-radius: 3px;
+            border: none;
+            border-bottom: 1px solid #334155;
             outline: none;
-            color: $white;
+            color: $primary;
             padding: $padding-xs;
             font-weight: bold;
+            resize: none;
         }
 
         textarea {
             font-family: inherit;
             min-height: 200px;
+            border: 1px solid #334155;
         }
 
-        input:focus + label,
-        textarea:focus + label,
-        input:hover + label,
-        textarea:hover + label {
-            color: $green;
+        ::placeholder {
+            color: $tertiary;
         }
 
         input:focus,
         textarea:focus,
         input:hover,
         textarea:hover {
-            outline: 1px solid #334155;
+            border-color: $secondary;
+        }
+
+        input.complete + label,
+        textarea.complete + label {
+            color: $secondary;
         }
     }
 
     button {
         float:right;
-        background: $green;
+        background: $secondary;
         padding: $padding-xs $padding;
         border-radius: 3px;
         border: none;
-        color: $white;
-        font-size: 14px;
+        color: $primary;
+        font-size: $font-size-sm;
 
         .submit-icon {
             margin-left: $margin-xs;
@@ -130,12 +115,12 @@ export default {
     }
 
     button:hover {
-        outline: 1px solid $grey;
+        outline: 1px solid $tertiary;
         cursor: pointer;
     }
 
     button:disabled {
-        background: $grey;
+        background: $tertiary;
         cursor: not-allowed;
     }
   }

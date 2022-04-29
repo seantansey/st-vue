@@ -42,11 +42,11 @@ export default {
       }
 
       h1 {
-        font-size: 40px;
+        font-size: $font-size-header;
       }
   }
 
   h3 {
-    color: $green;
+    color: $secondary;
   }
 </style>
