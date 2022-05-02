@@ -1,20 +1,18 @@
 import { baseUrl, dataCall } from "./api"
 
 
-const baseApiCall = async (params) => {
-    const response = await fetch(`${baseUrl}/contact`, {
+const postMessageFetch = (params) => {
+    return fetch(`${baseUrl}/message`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(params)
     })
-    const json = await response.json()
-    return json
 }
 
 const postMessage = (params) => {
-    return dataCall(baseApiCall, params)
+    return dataCall(postMessageFetch, params)
 }
 
 

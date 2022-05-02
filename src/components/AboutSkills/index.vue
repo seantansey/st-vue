@@ -1,5 +1,5 @@
 <template>
-  <div class="about-skills">
+  <section class="about-skills">
    <h1>Skills</h1>
     <menu-selector 
       :selectors="categories"
@@ -21,7 +21,7 @@
         <li>Agile development process</li>
         <li>Google Analytics</li>
       </ul> -->
-  </div>
+  </section>
 </template>
 
 <script>
@@ -76,7 +76,7 @@ export default {
       text-align: center;
       font-weight: bold;
       font-size: $font-size-sm;
-
+      
       i {
         display: block;
         font-size: 80px;

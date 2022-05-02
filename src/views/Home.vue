@@ -1,25 +1,22 @@
 <template>
-  <div class="home" :class="{ 'route-selected': routeSelected }">
-    <div class="router-links">
-      <a v-for="link in links" :key="link" @click.prevent="route(link, $event)">
-        {{ link }}
-      </a>
-    </div>
-    <div class="pipe-wrapper">
-      <div class="pipe-outlet">
-        <div class="pipeline-1"></div>
-        <div class="pipeline-2"></div>
-        <div class="pipeline-3"></div>
-      </div>
-      <div class= "pipeline-4"></div>
-      <div class="pipeline-5"></div>
-    </div>
+  <div class="home" :class="{ 'route-selected': routeSelected }">  
      <div class="logo-wrapper">
       <div class="logo-square">
         <div class="logo-text">ST</div>
         <div class="logo-text-shadow">ST</div>
       </div>
       <div class="logo-shadow"></div>
+    </div>
+    <div class="commit-chart-nav">
+      <div class="commit-1"></div>
+      <div class="commit-2"></div>
+      <div class="commit-3"></div>
+      <div class="commit-4"></div>
+       <div class="router-links">
+        <a v-for="link in links" :key="link" @click.prevent="route(link, $event)" :class="link">
+          {{ link }}
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -48,7 +45,7 @@ export default {
 @import '@/styles/variables.scss';
 
   .home {
-    height: 100vh;
+    min-height: 100vh;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -57,7 +54,6 @@ export default {
 
     .logo-wrapper {
       position: relative;
-      margin-top: $margin-sm;
 
       .logo-square {
         height: 300px;
@@ -122,60 +118,180 @@ export default {
       }
     }
 
-    .pipeline-1,
-    .pipeline-2,
-    .pipeline-3,
-    .pipeline-5 {
-      height: 40px;
-      width: 5px;
-      background: #1A1C26;
-      animation-name: fadeInOpacity;
-      animation-iteration-count: 1;
-      animation-duration: 6s;
-      animation-timing-function: ease-in;
-      box-shadow: 
-        0 0 5px rgba($secondary, 5),
-        inset 0 0 5px rgba($secondary, 5);
-      float: right;
+    .commit-chart-nav {
+      position: relative;
+      height: 300px;
+      width: 300px;
 
-    }
-
-    .pipeline-4 {
-      height: 5px;
-      width: 220px;
-      background: #1A1C26;
-      animation-name: fadeInOpacity;
-      animation-iteration-count: 1;
-      animation-duration: 6s;
-      animation-timing-function: ease-in;
-      box-shadow: 
-        0 0 5px rgba($secondary, 5),
-        inset 0 0 5px rgba($secondary, 5),
-    }
-
-    .pipe-outlet {
-      display: flex;
-      width: 220px;
-      justify-content: space-between;
-    }
-
-    .router-links {
-      width: 260px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-bottom: $margin-sm;
-
-      a {
-        font-size: $font-size;
-        text-decoration: none;
-        font-weight: bold;
-        color: $tertiary;
-        transition: color 1.5s, text-shadow 1.5s;
-        animation-name: fadeInOpacity;
+      .commit-1 {
+        top: 0;
+        left: 75px;
+        position: absolute;
+        height: 300px;
+        width: 5px;
+        background: #1A1C26;
+        box-shadow: 
+          0 0 5px rgba($secondary, 5),
+          inset 0 0 5px rgba($secondary, 5);
+        animation-name: slideInAbout;
         animation-iteration-count: 1;
         animation-duration: 6s;
         animation-timing-function: ease-in;
+      }
+
+      .commit-2 {
+          top: 0;
+          left: 150px;
+          position: absolute;
+          height: 200px;
+          width: 5px;
+          background: #1A1C26;
+          box-shadow: 
+            0 0 5px rgba($secondary, 5),
+            inset 0 0 5px rgba($secondary, 5);
+          animation-name: slideInBlog;
+          animation-iteration-count: 1;
+          animation-duration: 7s;
+          animation-timing-function: ease-in;
+      }
+
+       .commit-3 {
+          top: 0;
+          left: 225px;
+          position: absolute;
+          height: 100px;
+          width: 5px;
+          background: #1A1C26;
+          box-shadow: 
+            0 0 5px rgba($secondary, 5),
+            inset 0 0 5px rgba($secondary, 5);
+          animation-name: slideInContact;
+          animation-iteration-count: 1;
+          animation-duration: 8s;
+          animation-timing-function: ease-in;
+      }
+
+        .about {
+          position: absolute;
+          top: 280px;
+          left: 95px;
+          animation-name: fadeInAbout;
+          animation-iteration-count: 1;
+          animation-duration: 7s;
+          animation-timing-function: ease-in;
+        }
+
+        .blog {
+          position: absolute;
+          top: 180px;
+          left: 170px;
+          animation-name: fadeInBlog;
+          animation-iteration-count: 1;
+          animation-duration: 8s;
+          animation-timing-function: ease-in;
+        }
+
+        .contact {
+          position: absolute;
+          top: 80px;
+          left: 245px;
+          animation-name: fadeInContact;
+          animation-iteration-count: 1;
+          animation-duration: 9s;
+          animation-timing-function: ease-in;
+        }
+
+          @keyframes slideInAbout {
+             0% {
+              opacity: 0;
+              height: 0px;
+            }
+            50% {
+              opacity: 0;
+              height: 0px;
+            }
+            100% {
+              opacity: 1;
+              height: 300px;
+            }
+          }
+
+          @keyframes slideInBlog {
+             0% {
+              opacity: 0;
+              height: 0px;
+            }
+            50% {
+              opacity: 0;
+              height: 0px;
+            }
+            100% {
+              opacity: 1;
+              height: 200px;
+            }
+          }
+
+          @keyframes slideInContact {
+             0% {
+              opacity: 0;
+              height: 0px;
+            }
+            50% {
+              opacity: 0;
+              height: 0px;
+            }
+            100% {
+              opacity: 1;
+              height: 100px;
+            }
+          }
+
+          @keyframes fadeInAbout {
+            0% {
+              opacity: 0;
+            }
+            85% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+
+          @keyframes fadeInBlog {
+            0% {
+              opacity: 0;
+            }
+            87% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+
+           @keyframes fadeInContact {
+            0% {
+              opacity: 0;
+            }
+            89% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+    }
+
+
+    .router-links {
+     
+      a {
+        font-size: $font-size;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-weight: bold;
+        color: $tertiary;
       }
 
       a:hover {
@@ -239,8 +355,8 @@ export default {
   }
 
   .home.route-selected {
-    .router-links,
-    .pipe-wrapper {
+
+    .commit-chart-nav {
       opacity: 0;
       animation-name: fadeOutOpacity;
       animation-iteration-count: 1;

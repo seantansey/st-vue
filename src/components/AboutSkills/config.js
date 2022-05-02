@@ -25,6 +25,16 @@ export default {
                 ['PostgreSQL', 'devicon-postgresql-plain'],
                 ['GraphQL', 'devicon-graphql-plain'],
             ]
+        },
+        {
+            category: 'Other',
+            technologies: [
+                ['Jest', 'devicon-jest-plain'],
+                ['Git', 'devicon-git-plain'],
+                ['Google Analytics', 'devicon-google-plain'],
+                ['Prometheus', 'devicon-prometheus-original']
+
+            ]
         }
     ]
 }

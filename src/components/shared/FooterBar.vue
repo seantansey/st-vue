@@ -1,17 +1,20 @@
 <template>
   <footer>
       <div>
-        This site built with Vue.js and Node.js. There's always money in the banana stand. Here dem socials..
+        This site was built with Vue, Node.js and PostgreSQL. There's always money in the banana stand. Here dem socials..
       </div>
       <div class="social-wrapper">
          <router-link to="contact" class="send-message">  
           <font-awesome-icon icon="fa-solid fa-envelope" size="xl" />
         </router-link>
-        <a class="linkedin" href="https://www.linkedin.com/in/seantansey/">
+        <a class="linkedin" href="https://www.linkedin.com/in/seantansey/" target="_blank">
           <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
         </a> 
-        <a class="github" href="https://github.com/stansey92">
+        <a class="github" href="https://github.com/stansey92" target="_blank">
           <font-awesome-icon icon="fa-brands fa-github" size="xl" />
+        </a>
+        <a class="github" href="https://dev.to/stansey92" target="_blank">
+          <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
         </a>
       </div>
   </footer>
@@ -29,12 +32,17 @@ export default {
 @import '@/styles/variables.scss';
 
   footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     text-align: center;
-    font-size: $font-size-sm;
-    margin-top: 100px;
-    padding: $padding-lg 0;
+    font-size: 14px;
     border-top: 1px solid $tertiary;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .social-wrapper {
       display: flex;

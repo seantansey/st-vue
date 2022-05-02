@@ -25,10 +25,19 @@ export default {
 @import '@/styles/variables.scss';
 
   .page {
+    position: relative;
+    min-height: 100vh;
+
     .page-content {
       max-width: 1440px;
       margin: auto;
-      padding: $padding-lg 200px;
+      padding: 200px;
+      padding-top: $padding-lg;
+      min-height: 100%;
+      animation-name: fadeIn;
+      animation-iteration-count: 1;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in;
   
       @media only screen and (max-width: $tablet-lg) {
           padding-left: 100px;
@@ -45,5 +54,14 @@ export default {
           padding-right: $padding;
       }
     }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
   }
 </style>

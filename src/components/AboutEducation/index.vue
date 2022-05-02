@@ -1,5 +1,5 @@
 <template>
-  <div class="about-education">
+  <section class="about-education">
     <h1>Education</h1>
     <menu-selector
       :selectors="schools"
@@ -17,7 +17,7 @@
       </div>
     </menu-selector>
    
-  </div>
+  </section>
 </template>
 
 <script>

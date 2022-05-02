@@ -6,11 +6,11 @@
         <div class="contact-info">
           <h3>Interested in working together? Have a question? Contact me through any of the means below!</h3>
           <h4>Social media</h4>
-          <a class="linkedin" href="https://www.linkedin.com/in/seantansey/">
+          <a class="linkedin" href="https://www.linkedin.com/in/seantansey/" target="_blank">
             <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" class="social-icon"/>
             <span class="social-text">linkedin.com/in/seantansey</span>
           </a> 
-          <a class="github" href="https://github.com/stansey92">
+          <a class="github" href="https://github.com/stansey92" target="_blank">
             <font-awesome-icon icon="fa-brands fa-github" size="lg"  class="social-icon" />
             <span class="social-text">github.com/stansey92</span>
           </a>

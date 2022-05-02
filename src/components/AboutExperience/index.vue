@@ -1,5 +1,5 @@
 <template>
-    <div class="about-experience">
+    <section class="about-experience">
         <h1>Experience</h1>
         <menu-selector 
             :selected-index="selectedExperienceIndex"
@@ -19,7 +19,7 @@
                 </ul>
             </div>
         </menu-selector>
-    </div>
+    </section>
 </template>
 
 <script>

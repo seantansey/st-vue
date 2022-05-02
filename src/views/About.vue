@@ -1,11 +1,11 @@
 <template>
   <page>
-    <div class="about">
+    <main class="about">
       <about-introduction></about-introduction>
       <about-experience></about-experience>
       <about-skills></about-skills>
       <about-education></about-education>
-    </div>
+    </main>
   </page>
 </template>
 

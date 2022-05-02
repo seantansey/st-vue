@@ -1,42 +1,52 @@
 // For Shared Variables accross the site
 
-// ui
-$navbar-height: 75px;
+
+$base-rem: 16px;
+
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@function rem-calc($value, $base-value: $base-rem) {
+    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+    @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+    @return $value;
+}
 
 // breakpoints
 $mobile: 480px;
 $tablet-sm: 768px;
 $tablet-lg: 1024px;
 
+// font size
+$font-size-xs: rem-calc(12);
+$font-size-sm: rem-calc(14);
+$font-size: rem-calc(16);
+$font-size-lg: rem-calc(20);
+$font-size-header: rem-calc(40); 
+
 // margins
-$margin-xs: 5px;
-$margin-sm: 10px;
-$margin: 20px;
-$margin-lg: 30px;
-$margin-xl: 50px;
+$margin-xs: rem-calc(5);
+$margin-sm: rem-calc(10);
+$margin: rem-calc(20);
+$margin-lg: rem-calc(30);
+$margin-xl: rem-calc(50);
 
 // padding
-$padding-xs: 5px;
-$padding-sm: 10px;
-$padding: 20px;
-$padding-lg: 30px;
-$padding-xl: 50px;
-
-// font size
-$font-size-xs: 12px;
-$font-size-sm: 14px;
-$font-size: 16px;
-$font-size-header: 40px; 
+$padding-xs: rem-calc(5);
+$padding-sm: rem-calc(10);
+$padding: rem-calc(20);
+$padding-lg: rem-calc(30);
+$padding-xl: rem-calc(50);
 
 // // colors
 $primary: #f9fafb; //tailwind cool grey 100
 $secondary: #10b981; //tailwind emerald 500
 $tertiary: #475569; //tailwind blue gray 600
+$error: #dc2626; //tailwind red 600;
 
 // background
 $bg: #111827; //tailwind cool grey 900
 
-
-
-
-
+//$bg: linear-gradient(115deg,#111827, #064e3b);
+//$secondary: #be185d; 

@@ -1,17 +1,17 @@
 <template>
-  <div class="about-introduction">
+  <section class="about-introduction">
     <h1>About</h1>
     <div class="flex-row">
       <div class="about-content">
         <h3>I'm Sean Tansey. A Software Engineer specializing in Front-end development based out of Denver, Colorado.</h3>
         <p>
-          I enjoy building solutions for complex front end UI problems.
+          I enjoy building solutions for complex problems.
         </p>
         <p>
           I'm of the belief that simple, explict, readable and maintable code is more important than minor performance improvements made by writing condensed "clever" code.
         </p>
         <p>
-          While trained in full-stack development I've found myself drawn to building UI's from the ground up in both web and mobile applications. 
+          While trained in full-stack development I've found myself drawn to building front-ends from the ground up in both web and mobile applications. 
         </p>
         <p>
           When I'm not coding you'll find me out snowboarding, fishing, playing guitar, or enjoying the numerous outdoor activities Colorado has to offer.
@@ -21,8 +21,7 @@
         <img class="profile-picture" src="@/assets/IMG_1171_2-removebg.png">
       </div>
     </div>
-  </div>
-
+  </section>
 </template>
 
 <script>

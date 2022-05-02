@@ -14,7 +14,9 @@ import {
   faCalendar,
   faLocationDot,
   faPaperPlane,
-  faGem
+  faGem,
+  faComment,
+  faHeart
 } from '@fortawesome/free-solid-svg-icons'
 
 import { 
@@ -28,7 +30,8 @@ import {
   faLaravel,
   faLinkedin,
   faGithub,
-  faPhp
+  faPhp,
+  faDev
 } from '@fortawesome/free-brands-svg-icons'
 
 
@@ -54,7 +57,10 @@ library.add(
   faLocationDot,
   faPaperPlane,
   faGem,
-  faPhp
+  faPhp,
+  faComment,
+  faHeart,
+  faDev
 )
 
 /* add font awesome icon component */

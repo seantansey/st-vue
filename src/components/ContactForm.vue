@@ -16,9 +16,17 @@
         <textarea v-model="message" placeholder="Well... there’s always money in the banana stand." :class="{ complete: message }"></textarea>
         <label>Message</label>
     </div>
-    <button :disabled="!name || !email || !subject || !message" type="submit">
-        Send
-    </button>
+    <div class="button-row">
+        <transition name="fade">
+            <div v-if="messageSent" class="success">Message sent successfully!</div>
+        </transition>
+         <transition name="fade">
+            <div v-if="messageError" class="error">Message not delivered. Please try again</div>
+        </transition>
+        <button :disabled="!name || !email || !subject || !message" type="submit">
+            Send
+        </button>
+    </div>
   </form>
 </template>
 
@@ -32,17 +40,36 @@ export default {
           name: '',
           email: '',
           subject: '',
-          message: ''
+          message: '',
+          messageSent: false,
+          messageError: false
       }
   },
   methods: {
-      submitForm() {
-          const { name, email, subject, message } = this
-          if (!name || !email, !subject, !message) {
-              console.log('missing')
-          }
-          postMessage({ name, email, subject, message })
+      async submitForm() {
+        const { name, email, subject, message } = this
+        if (!name || !email, !subject, !message) {
+            console.log('missing')
+            //need error handling
+        }
+        const sendMessage = await postMessage({ name, email, subject, message })
+        if (sendMessage.error) {
+            this.messageError = true
+            this.resetForm()
+            return
+        }
+        this.resetForm()
+        this.messageSent = true
+        setTimeout(() => {
+            this.messageSent = false
+        }, 5000)
       },
+      resetForm() {
+          this.name = ''
+          this.email = ''
+          this.subject = ''
+          this.message = ''
+      }
   }
 }
 </script>
@@ -64,6 +91,10 @@ export default {
             margin-bottom: $margin-xs;
             font-weight: bold;
         }
+
+        textarea + label {
+            margin-bottom: $margin-sm;
+        }
         
         input,
         textarea {
@@ -72,7 +103,7 @@ export default {
             border-bottom: 1px solid #334155;
             outline: none;
             color: $primary;
-            padding: $padding-xs;
+            padding: $padding-xs $padding-sm;
             font-weight: bold;
             resize: none;
         }
@@ -81,6 +112,7 @@ export default {
             font-family: inherit;
             min-height: 200px;
             border: 1px solid #334155;
+            border-radius: 2px;
         }
 
         ::placeholder {
@@ -100,14 +132,42 @@ export default {
         }
     }
 
+    .button-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+
+        .success {
+            color: $secondary;
+            font-size: $font-size-sm;
+            font-weight: bold;
+        }
+
+        .error {
+            color: $error;
+            font-size: $font-size-sm;
+            font-weight: bold;
+        }
+
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 1s;
+        }
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+        
+    }
+
     button {
-        float:right;
         background: $secondary;
         padding: $padding-xs $padding;
         border-radius: 3px;
         border: none;
         color: $primary;
         font-size: $font-size-sm;
+        margin-left: $margin;
 
         .submit-icon {
             margin-left: $margin-xs;
