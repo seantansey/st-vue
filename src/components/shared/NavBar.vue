@@ -6,7 +6,7 @@
                     <div class="website-logo-text">ST</div>
                 </router-link>
                 <div class="links">
-                    <router-link v-for="link in links" :to="link" :key="link" class="router-link">
+                    <router-link v-for="link in links" :to="{ name: link }" :key="link" class="router-link">
                         {{ link }}
                     </router-link>
                 </div>

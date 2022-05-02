@@ -16,7 +16,8 @@ import {
   faPaperPlane,
   faGem,
   faComment,
-  faHeart
+  faHeart,
+  faChevronLeft
 } from '@fortawesome/free-solid-svg-icons'
 
 import { 
@@ -31,7 +32,7 @@ import {
   faLinkedin,
   faGithub,
   faPhp,
-  faDev
+  faDev,
 } from '@fortawesome/free-brands-svg-icons'
 
 
@@ -60,7 +61,8 @@ library.add(
   faPhp,
   faComment,
   faHeart,
-  faDev
+  faDev,
+  faChevronLeft
 )
 
 /* add font awesome icon component */

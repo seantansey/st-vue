@@ -1,6 +1,10 @@
 <template>
   <div class="page">
     <nav-bar></nav-bar>
+    <a v-if="backButton" class="back-button" @click="$router.back()">
+      <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm"/>
+      Back
+    </a>
     <div class="page-content">
       <slot></slot>
     </div>
@@ -17,6 +21,12 @@ export default {
   components: {
       NavBar,
       FooterBar
+  },
+  props: {
+    backButton: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>
@@ -27,6 +37,18 @@ export default {
   .page {
     position: relative;
     min-height: 100vh;
+
+    .back-button {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      color: $secondary;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      cursor: pointer;
+    }
 
     .page-content {
       max-width: 1440px;

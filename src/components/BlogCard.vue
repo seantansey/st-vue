@@ -1,39 +1,35 @@
 <template>
-    <a :href="url" target="_blank" >
-        <div class="blog-post">
-            <font-awesome-icon icon="fa-brands fa-dev" size="4x" class="dev-icon"/>
-            <div class="blog-content">
-                <div class="blog-content-row">
-                    <h3>{{ title }}</h3>
-                    <p class="published">Published: {{ localDate }}</p>
-                </div>
-                <div class="blog-content-row">
-                    <div class="reactions">
-                        <span class="blog-icon"><font-awesome-icon icon="fa-solid fa-heart" /> {{ reactions }}</span>
-                        <span class="blog-icon"><font-awesome-icon icon="fa-solid fa-comment" /> {{ comments }}</span>
-                        <span>{{ `${readTime} minute read` }}</span>
-                    </div>
-                    <p class="tags">{{ tags }}</p>
-                </div>
+    <router-link class="blog-card" :to="{ name: 'blog-post', params: { id: slug }}">
+        <font-awesome-icon icon="fa-brands fa-dev" size="4x" class="dev-icon"/>
+        <div class="blog-content">
+            <div class="blog-content-row">
+                <h3>{{ title }}</h3>
+                <p class="published">Published: {{ localDate }}</p>
             </div>
-           
+            <div class="blog-content-row">
+                <div class="reactions">
+                    <span class="blog-icon"><font-awesome-icon icon="fa-solid fa-heart" /> {{ reactions }}</span>
+                    <span class="blog-icon"><font-awesome-icon icon="fa-solid fa-comment" /> {{ comments }}</span>
+                    <span>{{ `${readTime} minute read` }}</span>
+                </div>
+                <p class="tags">{{ tags }}</p>
+            </div>
         </div>
-       
-    </a>
+    </router-link>
 </template>
 
 <script>
 
 export default {
-  name: 'BlogPost',
+  name: 'BlogCard',
   props: {
       comments: Number,
       date: String,
       reactions: Number,
       readTime: Number,
+      slug: String,
       tagList: Array,
       title: String, 
-      url: String
   },
   computed: {
       tags() {
@@ -42,6 +38,12 @@ export default {
       localDate() {
           return new Date(this.date).toDateString()
       }
+  },
+  methods: {
+    selectArticle() {
+        console.log(this.slug)
+        this.$emit('select-article', this.slug)
+    }
   }
   
 }
@@ -50,21 +52,18 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/variables.scss';
     
-    a {
-        display: block;
+    .blog-card {
         color: $primary;
-        text-decoration: none;
         border-left: 3px solid $tertiary;
         padding: $padding;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
 
-        .blog-post {
-            display: flex;
-            align-items: center;
-
-            .blog-content {
-                flex: 1;
-            }
+        .blog-content {
+            flex: 1;
         }
+    
 
         h3 {
             margin: 0;
@@ -126,16 +125,12 @@ export default {
                 color: $secondary;
             }
         }
-
-           
-
-
     }
 
-    a:hover {
+    .blog-card:hover {
         border-color: $secondary;
         background: #161D2C;
-        
+        cursor: pointer; 
     }
     
 </style>

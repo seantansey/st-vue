@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//import Home from '../views/Home.vue'
 // importing route this way allows for lazy loading of content
 const Home = () => import('../views/Home.vue')
 const About = () => import('../views/About.vue')
-const Blog = () => import('../views/Blog.vue')
+const BlogFeed = () => import('../views/BlogFeed.vue')
+const BlogPost = () => import('../views/BlogPost.vue')
 const Contact = () => import('../views/Contact.vue')
 
 Vue.use(VueRouter)
@@ -12,22 +12,27 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home
   },
   {
     path: '/about',
-    name: 'About',
+    name: 'about',
     component: About
   },
   {
     path: '/blog',
-    name: 'Blog',
-    component: Blog
+    name: 'blog',
+    component: BlogFeed
+  },
+  {
+    path: '/blog/:id',
+    name: 'blog-post',
+    component: BlogPost
   },
   {
     path: '/contact',
-    name: 'Contact',
+    name: 'contact',
     component: Contact
   }
 ]
