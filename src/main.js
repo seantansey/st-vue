@@ -17,7 +17,8 @@ import {
   faGem,
   faComment,
   faHeart,
-  faChevronLeft
+  faChevronLeft,
+  faXmark
 } from '@fortawesome/free-solid-svg-icons'
 
 import { 
@@ -62,7 +63,8 @@ library.add(
   faComment,
   faHeart,
   faDev,
-  faChevronLeft
+  faChevronLeft,
+  faXmark
 )
 
 /* add font awesome icon component */

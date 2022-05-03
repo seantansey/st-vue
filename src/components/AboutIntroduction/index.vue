@@ -34,12 +34,11 @@ export default {
 @import '@/styles/variables.scss';
 
   .about-introduction {
-    margin-bottom: 100px;
+    margin-bottom: $margin-xl;
 
     h1 {
        font-size: $font-size-header;
-       border-bottom: 1px solid $tertiary;
-       margin-bottom: 50px;
+       border-bottom: 1px solid $border-color;
     }
     
     .flex-row {

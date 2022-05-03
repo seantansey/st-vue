@@ -25,9 +25,8 @@
 </template>
 
 <script>
-import ContactForm from '@/components/ContactForm.vue'
+import ContactForm from '@/components/ContactForm'
 import Page from '@/components/shared/Page.vue'
-
 
 export default {
   name: 'Contact',
@@ -46,7 +45,6 @@ export default {
     h1 {
       font-size: $font-size-header;
       border-bottom: 1px solid $tertiary;
-      margin-bottom: 50px;
     }
 
     h3 {

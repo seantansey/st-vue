@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import BlogCard from '@/components/BlogCard.vue'
+import BlogCard from '@/components/BlogCard'
 import Page from '@/components/shared/Page.vue'
 import { getAllBlogPosts } from '@/api/blog.js'
 
@@ -56,7 +56,6 @@ export default {
     h1 {
       font-size: $font-size-header;
       border-bottom: 1px solid $tertiary;
-      margin-bottom: 50px;
     }
 
     h3 {

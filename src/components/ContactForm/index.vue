@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import postMessage from '../api/contact.js'
+import postMessage from '../../api/contact.js'
 
 export default {
   name: 'ContactForm',

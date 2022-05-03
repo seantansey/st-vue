@@ -1,11 +1,11 @@
 <template>
   <div class="page">
     <nav-bar></nav-bar>
-    <a v-if="backButton" class="back-button" @click="$router.back()">
-      <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm"/>
-      Back
-    </a>
     <div class="page-content">
+      <a v-if="backButton" class="back-button" @click="$router.back()">
+        <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm"/>
+        Back
+      </a>
       <slot></slot>
     </div>
     <footer-bar></footer-bar>
@@ -38,20 +38,9 @@ export default {
     position: relative;
     min-height: 100vh;
 
-    .back-button {
-      position: absolute;
-      top: 100px;
-      left: 100px;
-      color: $secondary;
-      text-decoration: none;
-    }
-
-    .back-button:hover {
-      cursor: pointer;
-    }
-
     .page-content {
-      max-width: 1440px;
+      position: relative;
+      max-width: 1200px;
       margin: auto;
       padding: 200px;
       padding-top: $padding-lg;
@@ -74,6 +63,30 @@ export default {
       @media only screen and (max-width: $mobile) {
           padding-left: $padding;
           padding-right: $padding;
+      }
+
+      .back-button {
+        position: absolute;
+        top: 20px;
+        left: 200px;
+        color: $secondary;
+        text-decoration: none;
+
+        @media only screen and (max-width: $tablet-lg) {
+           left: 100px;
+        }
+
+        @media only screen and (max-width: $tablet-sm) {
+          left: 50px;
+        }
+
+        @media only screen and (max-width: $mobile) {
+           left: 20px
+        }
+      }
+
+      .back-button:hover {
+        cursor: pointer;
       }
     }
 

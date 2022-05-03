@@ -45,7 +45,6 @@ export default {
         this.$emit('select-article', this.slug)
     }
   }
-  
 }
 </script>
 
@@ -64,7 +63,6 @@ export default {
             flex: 1;
         }
     
-
         h3 {
             margin: 0;
             margin-bottom: $margin-sm;

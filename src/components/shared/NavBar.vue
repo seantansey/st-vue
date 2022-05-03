@@ -11,13 +11,27 @@
                     </router-link>
                 </div>
                 <button class="menu-button" @click="toggleMenu">
-                    <font-awesome-icon icon="fa-solid fa-bars" size="xl"/>
+                    <font-awesome-icon v-if="menuOpen" icon="fa-solid fa-xmark" size="xl"/>
+                    <font-awesome-icon v-else icon="fa-solid fa-bars" size="xl"/>
                 </button>
             </div>  
             <div v-if="menuOpen" class="navbar-extended">
-                <router-link v-for="link in links" :to="link" :key="link" @click.native="toggleMenu" class="router-link">
-                    {{ link }}
-                </router-link>
+                <div class="menu-content">
+                    <router-link v-for="link in links" :to="link" :key="link" @click.native="toggleMenu" class="router-link">
+                        {{ link }}
+                    </router-link>
+                    <div class="social-links">
+                        <a class="linkedin" href="https://www.linkedin.com/in/seantansey/" target="_blank">
+                            <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
+                        </a> 
+                        <a class="github" href="https://github.com/stansey92" target="_blank">
+                            <font-awesome-icon icon="fa-brands fa-github" size="xl" />
+                        </a>
+                        <a class="github" href="https://dev.to/stansey92" target="_blank">
+                            <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
+                        </a>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -35,7 +49,6 @@ export default {
   },
   methods: {
       toggleMenu() {
-          console.log('hit')
           this.menuOpen = !this.menuOpen
       }
   }
@@ -48,10 +61,10 @@ export default {
     header {
         position: sticky;
         top: 0;
-        opacity: 0.98;
         font-weight: bold;
         background: $bg;
-        box-shadow: 0 6px 6px -2px #13151d; // revist and create a variable, only show when scrolled?
+        z-index: 1;
+        border-bottom: 1px solid $border-color;
 
         .navbar {
             display: flex;
@@ -60,42 +73,28 @@ export default {
             justify-content: space-between;
             padding: $padding-sm $padding-lg;
 
-
             @media only screen and (max-width: $mobile) {
                 padding-left: $padding;
                 padding-right: $padding;
             }
 
             .website-logo {
-                height: 50px;
-                width: 50px;
-                border: 3px solid $secondary;
-                border-radius: 5px;
+                height: 40px;
+                width: 40px;
+                border: 2px solid $secondary;
+                border-radius: 3px;
                 text-decoration: none;
                 position: relative;
-                box-shadow:
-                    inset 0 0 5px rgba($secondary, 1),
-                    0 0 5px rgba($secondary, 1);
-                text-shadow: 
-                    0 0 5px rgba($secondary, 1);
-                transition: box-shadow 1s, text-shadow 1s;
 
                 .website-logo-text {
+                    color: $secondary;
                     position: absolute;
                     bottom: 0;
                     right: 5px;
-                    font-size: 25px;
-                    font-weight: bold;
-                    color: $secondary;
+                    font-size: 20px;
+                    font-weight: bolder;
                 }
             }
-
-            .website-logo:hover {
-                box-shadow:
-                    inset 0 0 10px rgba($secondary, 1),
-                    0 0 10px rgba($secondary, 1);
-                text-shadow: 0 0 10px rgba($secondary, 1);
-            }   
           
              .links {
                 @media only screen and (max-width: $tablet-sm) {
@@ -119,40 +118,67 @@ export default {
 
             .menu-button:hover {
                 cursor: pointer;
-                border-color: #2B3241;
             }
         }
 
         .navbar-extended {
             display: none;
             position: absolute;
-            top: 76px;
+            top: 65px;
             left: 0;
             right: 0;
             background: $bg;
-            padding: 0 $padding-lg;
+            padding: $padding-lg;
             box-shadow: 0 6px 6px -2px #13151d; // revist and create a variable, only show when scrolled?
 
             @media only screen and (max-width: $tablet-sm) {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-content {
+                max-width: 288px;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin: auto;
+
+                .social-links {
+                    margin: $margin-lg $margin-xl 0 $margin-xl;
+                    display: flex;
+                    justify-content: space-between;
+
+                    a {
+                        color: $tertiary;
+                        text-decoration: none;
+                    }
+
+                    a:hover {
+                        color: $secondary;
+                    }
+                }
             }
         }
 
         .router-link {
             text-decoration: none;
-            color: $tertiary;
+            color: $primary;
             margin-left: $margin-xl;
-            transition: color 1s, text-shadow 1s;
+            transition: color 0.3s;
+            font-size: $font-size-sm;
+            text-transform: capitalize;
 
             @media only screen and (max-width: $tablet-sm) {
-                margin: $margin 0 $margin $margin-xs;
+                margin: 0;
+                padding: $padding-sm 0;
+                border-bottom: 1px solid $tertiary;
+               
             }
         }
 
         .router-link:hover {
             color: $secondary;
-            text-shadow: 0 0 10px rgba($secondary, 1);
         }
 
         .router-link-active {

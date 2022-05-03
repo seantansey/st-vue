@@ -40,7 +40,7 @@ $padding-lg: rem-calc(30);
 $padding-xl: rem-calc(50);
 
 // // colors
-$primary: #f9fafb; //tailwind cool grey 100
+$primary: #fafafa; //tailwind cool grey 100
 $secondary: #10b981; //tailwind emerald 500
 $tertiary: #475569; //tailwind blue gray 600
 $error: #dc2626; //tailwind red 600;
@@ -48,5 +48,13 @@ $error: #dc2626; //tailwind red 600;
 // background
 $bg: #111827; //tailwind cool grey 900
 
-//$bg: linear-gradient(115deg,#111827, #064e3b);
-//$secondary: #be185d; 
+
+$border-color: #475569;
+
+$bg-gradient: linear-gradient(141deg, rgba(17,24,39,1) 0%, rgba(31,41,55,1) 100%);
+
+h1 {
+    margin: $margin-lg 0;
+}
+
+

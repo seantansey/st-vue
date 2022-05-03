@@ -1,6 +1,6 @@
 <template>
   <footer>
-      <div>
+      <div class="footer-text">
         This site was built with Vue, Node.js and PostgreSQL. There's always money in the banana stand. Here dem socials..
       </div>
       <div class="social-wrapper">
@@ -38,22 +38,29 @@ export default {
     text-align: center;
     font-size: 14px;
     border-top: 1px solid $tertiary;
-    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    .footer-text {
+      margin: $margin $margin-lg 0 $margin;
+    }
+
     .social-wrapper {
       display: flex;
       justify-content: center;
       width: 100%;
-      margin-top: $margin;
+      margin: $margin 0;
     }
 
     a {
-      color: $secondary;
+      color: $tertiary;
       margin: 0 $margin;
+    }
+
+    a:hover {
+      color: $secondary;
     }
   }
 </style>

@@ -30,7 +30,10 @@ export default {
   async mounted() {
     const { id } = this.$route.params
     const article = await getBlogPostBySlug(id)
-    console.log(article)
+    if (article.error) {
+      this.$router.push({ name: 'page-not-found' })
+      return
+    }
     this.body = article.body_html
     this.title = article.title
     this.url = article.url

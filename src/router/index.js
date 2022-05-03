@@ -6,6 +6,7 @@ const About = () => import('../views/About.vue')
 const BlogFeed = () => import('../views/BlogFeed.vue')
 const BlogPost = () => import('../views/BlogPost.vue')
 const Contact = () => import('../views/Contact.vue')
+const PageNotFound = () => import('../views/PageNotFound.vue')
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: Contact
+  },
+  {
+    path: '*',
+    name: 'page-not-found',
+    component: PageNotFound
   }
 ]
 
