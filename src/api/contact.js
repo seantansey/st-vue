@@ -1,8 +1,8 @@
-import { baseUrl, dataCall } from "./api"
+import { dataCall } from "./api"
 
 
-const postMessageFetch = (params) => {
-    return fetch(`${baseUrl}/message`, {
+const fetchMessage = (params) => {
+    return fetch(`${process.env.VUE_APP_NODE_API}/message`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ const postMessageFetch = (params) => {
 }
 
 const postMessage = (params) => {
-    return dataCall(postMessageFetch, params)
+    return dataCall(fetchMessage, params)
 }
 
 

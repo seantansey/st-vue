@@ -17,7 +17,7 @@
             </div>  
             <div v-if="menuOpen" class="navbar-extended">
                 <div class="menu-content">
-                    <router-link v-for="link in links" :to="link" :key="link" @click.native="toggleMenu" class="router-link">
+                    <router-link v-for="link in links" :to="{ name: link }" :key="link" @click.native="toggleMenu" class="router-link">
                         {{ link }}
                     </router-link>
                     <div class="social-links">

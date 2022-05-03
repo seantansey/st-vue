@@ -28,7 +28,12 @@ export default {
       reactions: Number,
       readTime: Number,
       slug: String,
-      tagList: Array,
+      tagList: {
+          type: Array,
+          default(rawProps) {
+              return []
+          }
+      },
       title: String, 
   },
   computed: {
@@ -41,7 +46,6 @@ export default {
   },
   methods: {
     selectArticle() {
-        console.log(this.slug)
         this.$emit('select-article', this.slug)
     }
   }
