@@ -1,19 +1,19 @@
 <template>
   <footer>
       <div class="footer-text">
-        This site was built with Vue, Node.js and PostgreSQL. There's always money in the banana stand. Here dem socials..
+        This site was built with Vue, Node.js, Express, NGINX and PostgreSQL.
       </div>
       <div class="social-wrapper">
-         <router-link to="contact" class="send-message">  
+         <router-link to="contact">  
           <font-awesome-icon icon="fa-solid fa-envelope" size="xl" />
         </router-link>
-        <a class="linkedin" href="https://www.linkedin.com/in/seantansey/" target="_blank">
+        <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
           <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
         </a> 
-        <a class="github" href="https://github.com/stansey92" target="_blank">
+        <a href="https://github.com/seantansey" target="_blank">
           <font-awesome-icon icon="fa-brands fa-github" size="xl" />
         </a>
-        <a class="github" href="https://dev.to/stansey92" target="_blank">
+        <a href="https://dev.to/seantansey" target="_blank">
           <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
         </a>
       </div>
@@ -36,12 +36,12 @@ export default {
     bottom: 0;
     width: 100%;
     text-align: center;
-    font-size: 14px;
-    border-top: 1px solid $tertiary;
+    font-size: $font-size-sm;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: $tertiary;
 
     .footer-text {
       margin: $margin $margin-lg 0 $margin;

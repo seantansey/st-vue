@@ -5,8 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    ui: {
+      mobileMenuOpen: false
+    }
   },
   mutations: {
+    toggleMobileMenu (state) {
+      state.ui.mobileMenuOpen = !state.ui.mobileMenuOpen
+    }
   },
   actions: {
   },

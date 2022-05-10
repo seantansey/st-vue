@@ -70,6 +70,7 @@ export default {
     .no-blog-posts {
       padding: $padding-xl 0;
       text-align: center;
+      color: $tertiary;
     }
   }
 

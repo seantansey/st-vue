@@ -1,22 +1,40 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ 'no-scroll': mobileMenuOpen }">
       <router-view />
   </div>
 </template>
 
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  name: 'App',
+  computed: mapState({
+    mobileMenuOpen: state => state.ui.mobileMenuOpen
+  })
+}
+</script>
+
 <style lang="scss">
 @import '@/styles/variables.scss';
 
-body {
+body, #app {
+  min-height: 100%;
   margin: 0;
-}
-
-#app {
+  background: $bg;
+  color: $primary;
   font-family: Avenir;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $primary;
-  background: $bg;
+}
+
+.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+button {
+    font-family: Avenir;
 }
 
 .blog-post { // put this all in some overrides file
@@ -26,7 +44,8 @@ body {
       font-size: $font-size;
       border-radius: 3px;
       padding: $padding;
-      color: #67e8f9;
+      color: $secondary;
+      overflow: auto;
     }
 
     img {

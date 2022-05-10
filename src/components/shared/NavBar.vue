@@ -1,30 +1,33 @@
 <template>
     <header>
         <nav>
-            <div class="navbar">
-                <router-link to="/" class="website-logo">
-                    <div class="website-logo-text">ST</div>
-                </router-link>
+            <div class="navbar" :class="{ 'navbar-shadow': pageScrolled }">
+                <div class="website-logo-wrapper">
+                    <router-link to="/" class="website-logo">
+                        <div class="website-logo-text">ST</div>
+                    </router-link>
+                    <div>Web <br/> Development</div>
+                </div>
                 <div class="links">
                     <router-link v-for="link in links" :to="{ name: link }" :key="link" class="router-link">
                         {{ link }}
                     </router-link>
                 </div>
-                <button class="menu-button" @click="toggleMenu">
-                    <font-awesome-icon v-if="menuOpen" icon="fa-solid fa-xmark" size="xl"/>
+                <button class="menu-button" @click="toggleMobileMenu">
+                    <font-awesome-icon v-if="mobileMenuOpen" icon="fa-solid fa-xmark" size="xl"/>
                     <font-awesome-icon v-else icon="fa-solid fa-bars" size="xl"/>
                 </button>
             </div>  
-            <div v-if="menuOpen" class="navbar-extended">
+            <div v-if="mobileMenuOpen" class="navbar-extended">
                 <div class="menu-content">
-                    <router-link v-for="link in links" :to="{ name: link }" :key="link" @click.native="toggleMenu" class="router-link">
+                    <router-link v-for="link in links" :to="{ name: link }" :key="link"  @click.native="toggleMobileMenu" class="router-link">
                         {{ link }}
                     </router-link>
                     <div class="social-links">
                         <a class="linkedin" href="https://www.linkedin.com/in/seantansey/" target="_blank">
                             <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
                         </a> 
-                        <a class="github" href="https://github.com/stansey92" target="_blank">
+                        <a class="github" href="https://github.com/seantansey" target="_blank">
                             <font-awesome-icon icon="fa-brands fa-github" size="xl" />
                         </a>
                         <a class="github" href="https://dev.to/stansey92" target="_blank">
@@ -38,18 +41,38 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 
 export default {
   name: 'Navbar',
   data() {
       return {
-          menuOpen: false,
-          links: ['about', 'blog', 'contact']
+          links: ['about', 'blog', 'portfolio', 'contact'],
+          pageScrolled: false
       }
   },
+  computed: mapState({
+    mobileMenuOpen: state => state.ui.mobileMenuOpen
+  }),
+  mounted() {
+      window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+      window.removeEventListener('scroll', this.handleScroll)
+  },
   methods: {
-      toggleMenu() {
-          this.menuOpen = !this.menuOpen
+      toggleMobileMenu() {
+          this.$store.commit('toggleMobileMenu')
+      },
+      handleScroll(event) {
+          // add a throttle to this
+          if (window.scrollY > 0) {
+              console.log('hit')
+              this.pageScrolled = true
+              return
+          }
+          this.pageScrolled = false
+
       }
   }
 }
@@ -64,39 +87,48 @@ export default {
         font-weight: bold;
         background: $bg;
         z-index: 1;
-        border-bottom: 1px solid $border-color;
 
         .navbar {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding: $padding-sm $padding-lg;
+            height: 64px;
+            padding-left: $padding;
+            padding-right: $padding;
 
-            @media only screen and (max-width: $mobile) {
-                padding-left: $padding;
-                padding-right: $padding;
-            }
-
-            .website-logo {
-                height: 40px;
-                width: 40px;
-                border: 2px solid $secondary;
-                border-radius: 3px;
-                text-decoration: none;
-                position: relative;
-
-                .website-logo-text {
-                    color: $secondary;
-                    position: absolute;
-                    bottom: 0;
-                    right: 5px;
-                    font-size: 20px;
-                    font-weight: bolder;
+            .website-logo-wrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                font-size: $font-size-sm;
+            
+                .website-logo {
+                    height: 40px;
+                    width: 40px;
+                    border: 2px solid $secondary;
+                    text-decoration: none;
+                    position: relative;
+                    margin-right: $margin-sm;
+    
+                    .website-logo-text {
+                        color: $secondary;
+                        position: absolute;
+                        bottom: 0;
+                        right: 5px;
+                        font-size: 20px;
+                        font-weight: bolder;
+                    }
                 }
             }
+
           
              .links {
+                height: 64px;
+                display: flex;
+                align-items: center;
+                margin-left: $margin;
+
                 @media only screen and (max-width: $tablet-sm) {
                     display: none;
                 }
@@ -121,15 +153,19 @@ export default {
             }
         }
 
+        .navbar-shadow {
+            box-shadow: 0 1px 2px 0 rgba(black, 0.5);
+        }
+
         .navbar-extended {
             display: none;
             position: absolute;
             top: 65px;
             left: 0;
             right: 0;
+            height: calc(100vh - 65px);
             background: $bg;
             padding: $padding-lg;
-            box-shadow: 0 6px 6px -2px #13151d; // revist and create a variable, only show when scrolled?
 
             @media only screen and (max-width: $tablet-sm) {
                 display: flex;
@@ -142,7 +178,7 @@ export default {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                margin: auto;
+                margin: $margin-lg auto;
 
                 .social-links {
                     margin: $margin-lg $margin-xl 0 $margin-xl;
@@ -162,9 +198,13 @@ export default {
         }
 
         .router-link {
+            display: flex;
+            align-items: center;
+            height: 100%;
             text-decoration: none;
-            color: $primary;
-            margin-left: $margin-xl;
+            color: $tertiary;
+            margin-left: $margin-sm;
+            padding: 0 $padding;
             transition: color 0.3s;
             font-size: $font-size-sm;
             text-transform: capitalize;
@@ -173,16 +213,25 @@ export default {
                 margin: 0;
                 padding: $padding-sm 0;
                 border-bottom: 1px solid $tertiary;
-               
             }
         }
 
         .router-link:hover {
-            color: $secondary;
+            color: $primary;
         }
 
         .router-link-active {
-            color: $secondary;
+            color: $primary;
+            position: relative;
+        }
+        .router-link-active::after {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            content: " ";
+            background: $secondary;
         }
     }
 

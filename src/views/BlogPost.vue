@@ -2,6 +2,7 @@
   <page back-button>
     <article class="blog-post">
         <h1>{{ title }}</h1>
+        <img :src="cover">
         <p>Article sourced from dev.to via the dev.to API. View the original article @: <a :href="url" target="_blank">{{ url }}</a> </p>
         <div v-html="body"></div>
     </article>
@@ -23,6 +24,7 @@ export default {
   data() {
     return {
       body: '',
+      cover: '',
       title: '',
       url: ''
     }
@@ -35,6 +37,7 @@ export default {
       return
     }
     this.body = article.body_html
+    this.cover = article.cover_image
     this.title = article.title
     this.url = article.url
   }

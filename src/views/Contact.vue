@@ -10,9 +10,13 @@
             <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" class="social-icon"/>
             <span class="social-text">linkedin.com/in/seantansey</span>
           </a> 
-          <a class="github" href="https://github.com/stansey92" target="_blank">
+          <a class="github" href="https://github.com/seantansey" target="_blank">
             <font-awesome-icon icon="fa-brands fa-github" size="lg"  class="social-icon" />
-            <span class="social-text">github.com/stansey92</span>
+            <span class="social-text">github.com/seantansey</span>
+          </a>
+          <a class="github" href="https://dev.to/seantansey" target="_blank">
+            <font-awesome-icon icon="fa-brands fa-dev" size="lg"  class="social-icon" />
+            <span class="social-text">dev.to/seantansey</span>
           </a>
         </div>
         <div class="contact-form-wrapper">
@@ -75,37 +79,39 @@ export default {
       color: $secondary;
     }
 
-    .social-icon {
-      margin-right: $margin-sm;
-    }
-
-    .social-text {
-      font-size: $font-size;
-    }
-
-    .linkedin {
-      display: block;
-      margin: $margin-sm 0;
-      color: #0a66c2;
-      text-decoration: none;
-    }
-
-    .linkedin:hover {
-      color: $primary;
-      text-decoration: underline;
-    }
-
-    .github {
-      display: block;
-      margin: $margin-sm 0;
+    a {
+      display: flex;
+      align-items: center;
+      margin-bottom: $margin-sm;
       color: $tertiary;
-      text-decoration: none;
+      font-size: $font-size;
+
+      .social-icon {
+        margin-right: $margin-sm;
+      }
     }
 
-    .github:hover {
+    a:hover {
       color: $secondary;
       text-decoration: underline;
     }
+
+    
+
+    // .social-text {
+
+    // }
+
+    // .github {
+    //   display: block;
+    //   margin: $margin-sm 0;
+    //   text-decoration: none;
+    // }
+
+    // .github:hover {
+    //   color: $secondary;
+    //   text-decoration: underline;
+    // }
 
     .contact-form-wrapper {
       flex: 1;

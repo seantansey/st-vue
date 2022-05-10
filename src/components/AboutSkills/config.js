@@ -32,7 +32,8 @@ export default {
                 ['Jest', 'devicon-jest-plain'],
                 ['Git', 'devicon-git-plain'],
                 ['Google Analytics', 'devicon-google-plain'],
-                ['Prometheus', 'devicon-prometheus-original']
+                ['Prometheus', 'devicon-prometheus-original'],
+                ['NGINX', 'devicon-nginx-original']
 
             ]
         }

@@ -62,6 +62,7 @@ export default {
         display: flex;
         align-items: center;
         text-decoration: none;
+        margin: $margin-sm 0;
 
         .blog-content {
             flex: 1;

@@ -8,7 +8,7 @@
           I enjoy building solutions for complex problems.
         </p>
         <p>
-          I'm of the belief that simple, explict, readable and maintable code is more important than minor performance improvements made by writing condensed "clever" code.
+          I'm of the belief that explict, readable and maintable code is more important than minor performance improvements made by writing condensed "clever" code.
         </p>
         <p>
           While trained in full-stack development I've found myself drawn to building front-ends from the ground up in both web and mobile applications. 
@@ -71,7 +71,6 @@ export default {
       .profile-picture {
         width: 100%;
         background: $secondary;
-        border-radius: 3px;
       }
     }
   }

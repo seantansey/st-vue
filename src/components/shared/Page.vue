@@ -45,10 +45,6 @@ export default {
       padding: 200px;
       padding-top: $padding-lg;
       min-height: 100%;
-      animation-name: fadeIn;
-      animation-iteration-count: 1;
-      animation-duration: 0.5s;
-      animation-timing-function: ease-in;
   
       @media only screen and (max-width: $tablet-lg) {
           padding-left: 100px;
@@ -89,14 +85,5 @@ export default {
         cursor: pointer;
       }
     }
-
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
   }
 </style>

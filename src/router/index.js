@@ -5,6 +5,7 @@ const Home = () => import('../views/Home.vue')
 const About = () => import('../views/About.vue')
 const BlogFeed = () => import('../views/BlogFeed.vue')
 const BlogPost = () => import('../views/BlogPost.vue')
+const Portfolio = () => import('../views/Portfolio.vue')
 const Contact = () => import('../views/Contact.vue')
 const PageNotFound = () => import('../views/PageNotFound.vue')
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/blog/:id',
     name: 'blog-post',
     component: BlogPost
+  },
+  {
+    path: '/portfolio',
+    name: 'portfolio',
+    component: Portfolio
   },
   {
     path: '/contact',

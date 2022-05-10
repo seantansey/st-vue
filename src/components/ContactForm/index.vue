@@ -49,8 +49,8 @@ export default {
       async submitForm() {
         const { name, email, subject, message } = this
         if (!name || !email, !subject, !message) {
-            console.log('missing')
-            //need error handling
+            console.log('missing parameters')
+            return
         }
         const sendMessage = await postMessage({ name, email, subject, message })
         if (sendMessage.error) {
