@@ -28,15 +28,6 @@ body, #app {
   -moz-osx-font-smoothing: grayscale;
 }
 
-//  .background-icon {
-//     position: absolute;
-//     display: flex;
-//     top: 100px;
-//     height: 1500px;
-//     color: black;
-//     opacity: 15%;
-//   }
-
 .no-scroll {
   height: 100vh;
   overflow: hidden;
@@ -59,6 +50,10 @@ button {
     img {
       max-width: 100%;
       height: auto;
+    }
+
+    a {
+      color: $secondary;
     }
 
     .highlight__panel-action {

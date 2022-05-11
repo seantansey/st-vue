@@ -1,11 +1,12 @@
 import { dataCall } from "./api"
+import endpoints from "./endpoints"
 
 const fetchAllPosts = () => {
-    return fetch(`${process.env.VUE_APP_DEV_TO_URL}?username=${process.env.VUE_APP_DEV_USERNAME}`)
+    return fetch(`${endpoints.DEV_TO_ENDPOINT}?username=${endpoints.DEV_TO_USERNAME}`)
 }
 
 const fetchPostBySlug = (slug) => {
-    return fetch(`${process.env.VUE_APP_DEV_TO_URL}/${process.env.VUE_APP_DEV_USERNAME}/${slug}`)
+    return fetch(`${endpoints.DEV_TO_ENDPOINT}/${endpoints.DEV_TO_USERNAME}/${slug}`)
 }
 
 export const getAllBlogPosts = () => {

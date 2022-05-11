@@ -1,7 +1,7 @@
 <template>
   <footer>
       <div class="footer-text">
-        This site was built with Vue, Node.js, Express, NGINX and PostgreSQL.
+        This site was built with Vue, NGINX, Node.js, Express and PostgreSQL.
       </div>
       <div class="social-wrapper">
          <router-link to="contact">  
@@ -23,8 +23,7 @@
 <script>
 
 export default {
-  name: 'FooterBar',
-  
+  name: 'FooterBar'
 }
 </script>
 

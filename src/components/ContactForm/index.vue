@@ -5,7 +5,7 @@
         <label>Name</label>
     </div>
      <div class="form-input">
-        <input v-model="email" type="email" placeholder="george@bluthcompany.com" :class="{ complete: email }">
+        <input v-model="email" type="email" placeholder="george.oscar@bluthcompany.com" :class="{ complete: email }">
         <label>Email</label>
     </div>
      <div class="form-input">
@@ -13,7 +13,7 @@
         <label>Subject</label>
     </div>
      <div class="form-input">
-        <textarea v-model="message" placeholder="Well... there’s always money in the banana stand." :class="{ complete: message }"></textarea>
+        <textarea v-model="message" placeholder="There’s always money in the banana stand...." :class="{ complete: message }"></textarea>
         <label>Message</label>
     </div>
     <div class="button-row">

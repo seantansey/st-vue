@@ -49,7 +49,7 @@ export default {
         color: black;
         opacity: 12%;
         animation-name: spin;
-        animation-duration: 20s;
+        animation-duration: 30s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
       }
