@@ -132,7 +132,7 @@ export default {
 
     .blog-card:hover {
         border-color: $secondary;
-        background: #161D2C;
+        background: #161D2C80;
         cursor: pointer; 
     }
     

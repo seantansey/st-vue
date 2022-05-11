@@ -1,12 +1,15 @@
 <template>
   <div class="page">
     <nav-bar></nav-bar>
-    <div class="page-content">
-      <a v-if="backButton" class="back-button" @click="$router.back()">
-        <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm"/>
-        Back
-      </a>
-      <slot></slot>
+    <div class="page-content-container">
+      <img class="background-image" src="../../assets/circle-nodes-solid.svg">
+      <div class="page-content">
+        <a v-if="backButton" class="back-button" @click="$router.back()">
+          <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm"/>
+          Back
+        </a>
+        <slot></slot>
+      </div>
     </div>
     <footer-bar></footer-bar>
   </div>
@@ -35,54 +38,70 @@ export default {
 @import '@/styles/variables.scss';
 
   .page {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
+    position: relative;
 
-    .page-content {
+    .page-content-container {
       position: relative;
-      max-width: 1200px;
-      margin: auto;
-      padding: 200px;
-      padding-top: $padding-lg;
-      min-height: 100%;
-  
-      @media only screen and (max-width: $tablet-lg) {
-          padding-left: 100px;
-          padding-right: 100px;
-      }
+      overflow: hidden;
+      flex: 1;
 
-       @media only screen and (max-width: $tablet-sm) {
-          padding-left: 50px;
-          padding-right: 50px;
-      }
-
-      @media only screen and (max-width: $mobile) {
-          padding-left: $padding;
-          padding-right: $padding;
-      }
-
-      .back-button {
+      .background-image {
         position: absolute;
-        top: 20px;
-        left: 200px;
-        color: $secondary;
-        text-decoration: none;
+        height: 1600px;
+        top: 64px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .page-content {
+        position: relative;
+        max-width: 1200px;
+        margin: auto;
+        padding: 200px;
+        padding-top: $padding-lg;
+        min-height: 100%;
 
         @media only screen and (max-width: $tablet-lg) {
-           left: 100px;
+            padding-left: 100px;
+            padding-right: 100px;
         }
 
         @media only screen and (max-width: $tablet-sm) {
-          left: 50px;
+            padding-left: 50px;
+            padding-right: 50px;
         }
 
         @media only screen and (max-width: $mobile) {
-           left: 20px
+            padding-left: $padding;
+            padding-right: $padding;
         }
-      }
 
-      .back-button:hover {
-        cursor: pointer;
+        .back-button {
+          position: absolute;
+          top: 20px;
+          left: 200px;
+          color: $secondary;
+          text-decoration: none;
+
+          @media only screen and (max-width: $tablet-lg) {
+            left: 100px;
+          }
+
+          @media only screen and (max-width: $tablet-sm) {
+            left: 50px;
+          }
+
+          @media only screen and (max-width: $mobile) {
+            left: 20px
+          }
+        }
+
+        .back-button:hover {
+          cursor: pointer;
+        }
       }
     }
   }

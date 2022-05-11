@@ -9,6 +9,7 @@
           I've learned many new concepts along the way and below is a collection of those lessons.
       </h3>
       <div v-if="posts.length" class="blog-post-list">
+        <p>All blog posts are pulled in from the dev.to API. To interact with any of these posts see my account @ <a href="https://dev.to/seantansey" target="_blank">dev.to/seantansey</a></p>
         <blog-card
           v-for="post in posts"
           :key="post.id"
@@ -72,7 +73,14 @@ export default {
       text-align: center;
       color: $tertiary;
     }
+
+    p {
+      color: $tertiary;
+
+      a {
+        color: $secondary;
+      }
+    } 
   }
 
- 
 </style>

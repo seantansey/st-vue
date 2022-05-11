@@ -1,13 +1,12 @@
 <template>
         <div class="home">
           <font-awesome-icon class="background-icon" icon="fa-solid fa-circle-nodes" />
-
           <div class="home-content">
             <div class="logo-square">
               <div class="logo-text">ST</div>
             </div>
-            <h1 class="text-1">Web Development</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Sed augue lacus viverra vitae congue.</p>
+            <h1 class="text-1">Development</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare.</p>
             <div class="button-row">
                 <router-link :to="{ name: 'about'}" class="get-started">
                     Get started
@@ -41,13 +40,18 @@ export default {
       justify-content: center;
       align-items: center;
       position:relative;
+      overflow: hidden;
 
       .background-icon {
         position: absolute;
         top: 0;
         height: 100%;
         color: black;
-        opacity: 15%;
+        opacity: 12%;
+        animation-name: spin;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
       }
 
       .home-content {
@@ -72,13 +76,12 @@ export default {
         }
 
         @media only screen and (max-width: $mobile) {
-            padding-left: $padding;
-            padding-right: $padding;
+           padding: 0;
         }
 
         .logo-square {
-          height: 300px;
-          width: 300px;
+          height: 290px;
+          width: 290px;
           border: 15px solid $secondary;
           position: relative;
           margin-bottom: $margin-lg;
@@ -97,6 +100,10 @@ export default {
           font-size: 70px;
           font-weight: bold;
           margin: 0;
+
+          @media only screen and (max-width: $tablet-sm) {
+            font-size: 40px;
+          }
         }
 
         .text-2 {
@@ -141,12 +148,15 @@ export default {
           }
 
         }
-
-
-       
-
-      }
-
-     
+      }  
   }
+  @keyframes spin {
+    0% { 
+      transform: rotate(0deg)
+    }
+    100% { 
+      transform: rotate(360deg)
+    }
+  }
+
 </style>

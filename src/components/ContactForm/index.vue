@@ -112,7 +112,6 @@ export default {
             font-family: inherit;
             min-height: 200px;
             border: 1px solid #334155;
-            border-radius: 2px;
         }
 
         ::placeholder {
@@ -163,7 +162,6 @@ export default {
     button {
         background: $secondary;
         padding: $padding-xs $padding;
-        border-radius: 3px;
         border: none;
         color: $primary;
         font-size: $font-size-sm;

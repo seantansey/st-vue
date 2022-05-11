@@ -14,13 +14,6 @@
           </div>
       </div>
     </menu-selector>
-     <!-- <ul>
-        <li>Responsive design</li>
-        <li>RESTful APIs</li>
-        <li>Unit testing (Jest)</li>
-        <li>Agile development process</li>
-        <li>Google Analytics</li>
-      </ul> -->
   </section>
 </template>
 

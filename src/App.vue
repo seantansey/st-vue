@@ -28,6 +28,15 @@ body, #app {
   -moz-osx-font-smoothing: grayscale;
 }
 
+//  .background-icon {
+//     position: absolute;
+//     display: flex;
+//     top: 100px;
+//     height: 1500px;
+//     color: black;
+//     opacity: 15%;
+//   }
+
 .no-scroll {
   height: 100vh;
   overflow: hidden;
@@ -42,7 +51,6 @@ button {
     pre {
       background: #000000;
       font-size: $font-size;
-      border-radius: 3px;
       padding: $padding;
       color: $secondary;
       overflow: auto;

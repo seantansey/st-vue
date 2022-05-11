@@ -6,7 +6,6 @@
                     <router-link to="/" class="website-logo">
                         <div class="website-logo-text">ST</div>
                     </router-link>
-                    <div>Web <br/> Development</div>
                 </div>
                 <div class="links">
                     <router-link v-for="link in links" :to="{ name: link }" :key="link" class="router-link">
@@ -139,7 +138,6 @@ export default {
                 border: none;
                 background: none;
                 color: $secondary;
-                border-radius: 3px;
                 border: 1px solid $bg;
                 transition: border-color 1s;
 
