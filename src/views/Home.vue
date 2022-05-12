@@ -47,7 +47,7 @@ export default {
         top: 0;
         height: 100%;
         color: black;
-        opacity: 12%;
+        opacity: 0.12;
         animation-name: spin;
         animation-duration: 30s;
         animation-iteration-count: infinite;
