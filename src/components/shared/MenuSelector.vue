@@ -81,7 +81,6 @@ export default {
 
         .selector:hover {
             cursor: pointer;
-            border-color: $secondary;
             color: $primary;
         }
 
@@ -122,10 +121,17 @@ export default {
             }
         }
 
-        .selector.selected {
-            border-color: $secondary;
+        .selector:hover {
+            cursor: pointer;
+            color: $primary;
         }
 
+        .selector.selected {
+            flex: 2;
+            font-weight: bold;
+            border-color: $secondary;
+            color: $primary;
+        }
     }
 }
 
