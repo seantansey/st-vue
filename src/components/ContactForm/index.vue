@@ -49,7 +49,8 @@ export default {
       async submitForm() {
         const { name, email, subject, message } = this
         if (!name || !email, !subject, !message) {
-            console.log('missing parameters')
+            this.messageError = true
+            this.resetForm()
             return
         }
         const sendMessage = await postMessage({ name, email, subject, message })
@@ -137,7 +138,6 @@ export default {
         justify-content: flex-end;
         align-items: center;
 
-
         .success {
             color: $secondary;
             font-size: $font-size-sm;
@@ -156,7 +156,6 @@ export default {
         .fade-enter, .fade-leave-to {
             opacity: 0;
         }
-        
     }
 
     button {
