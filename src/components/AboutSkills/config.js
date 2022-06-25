@@ -3,7 +3,7 @@ export default {
         {
             category: 'Front-end\n Development',
             technologies: [
-                ['Javascript', 'devicon-javascript-plain'],
+                ['JavaScript', 'devicon-javascript-plain'],
                 ['Vue', 'devicon-vuejs-plain'],
                 ['Svelte', 'devicon-svelte-plain'],
                 ['React', 'devicon-react-original'],
@@ -24,6 +24,7 @@ export default {
                 ['MySQL', 'devicon-mysql-plain'],
                 ['PostgreSQL', 'devicon-postgresql-plain'],
                 ['GraphQL', 'devicon-graphql-plain'],
+                ['.NET', 'devicon-dot-net-plain-wordmark']
             ]
         },
         {
@@ -34,7 +35,6 @@ export default {
                 ['Google Analytics', 'devicon-google-plain'],
                 ['Prometheus', 'devicon-prometheus-original'],
                 ['NGINX', 'devicon-nginx-original']
-
             ]
         }
     ]

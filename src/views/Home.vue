@@ -6,10 +6,10 @@
               <div class="logo-text">ST</div>
             </div>
             <h1 class="text-1">Development</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare.</p>
+            <p>Helping people turn their ideas into elegant and effective digital solutions.<br> Need a website or app? Not sure how to get started? Lets chat...</p>
             <div class="button-row">
-                <router-link :to="{ name: 'about'}" class="get-started">
-                    Get started
+                <router-link :to="{ name: 'about'}" class="learn-more">
+                    Learn more
                 </router-link>
                 <router-link :to="{ name: 'contact'}" class="contact">
                     Contact
@@ -135,7 +135,7 @@ export default {
             cursor: pointer;
           }
 
-          .get-started {
+          .learn-more {
             border: 1px solid $secondary;
             color: $primary;
             background: $secondary;

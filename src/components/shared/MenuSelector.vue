@@ -1,5 +1,6 @@
 <template>
-    <div class="menu" :class="{ right: rightAlign }">
+<div class="menu">
+    <div class="menu-desktop" :class="{ right: rightAlign }">
          <div class="menu-selector">
             <div 
                 v-for="(selector, index) in selectors" 
@@ -15,6 +16,28 @@
             <slot></slot>
         </div>
     </div>
+    <div class="menu-mobile">
+        <div @click="toggleDropdown" class="menu-selector">
+            <div>{{ selectors[selectedIndex] }}</div>
+            <font-awesome-icon v-if="dropdownOpen" icon="fa-solid fa-xmark" class="icon" />
+            <font-awesome-icon v-else icon="fa-solid fa-chevron-down" class="icon" />
+        </div>
+        <div v-if="dropdownOpen" class="menu-dropdown">
+              <div 
+                v-for="(selector, index) in selectors" 
+                :key="index" 
+                class="selector"
+                :class="{ selected: index === selectedIndex }" 
+                @click="select(index)"
+            >
+                {{ selector }}
+            </div>
+        </div>
+        <div class="menu-content">
+            <slot></slot>
+        </div>
+    </div>
+</div>
 </template>
 
 <script>
@@ -29,9 +52,18 @@ export default {
           default: 0
       }
   },
+  data() {
+      return {
+          dropdownOpen: false
+      }
+  },
   methods: {
       select(index) {
           this.$emit('select', index)
+          if (this.dropdownOpen) this.dropdownOpen = false
+      },
+      toggleDropdown() {
+          this.dropdownOpen = !this.dropdownOpen
       }
   }
 }
@@ -41,96 +73,136 @@ export default {
 @import '@/styles/variables.scss';
 
 .menu {
-    display: flex;
-    flex-direction: row;
+    position: relative;
 
-    @media only screen and (max-width: $tablet-sm) {
-        flex-direction: column;
-    }
-
-    .menu-selector {
-        flex: 1;
+    .menu-desktop {
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        flex-direction: row;
 
-        @media only screen and (max-width: $tablet-sm) {
-            flex-direction: row;
-            margin-bottom: $margin-lg;
+         @media only screen and (max-width: $tablet-sm) {
+            display: none;
         }
 
-        .selector {
+        .menu-selector {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            .selector {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                transition: all 0.3s linear;
+                border-right: 3px solid $tertiary;
+                margin-right: 50px;
+                flex: 1;
+                color: $tertiary;
+                padding: $padding;
+                white-space: pre;
+            }
+
+            .selector:hover {
+                cursor: pointer;
+                color: $primary;
+            }
+
+            .selector.selected {
+                flex: 2;
+                font-weight: bold;
+                border-color: $secondary;
+                color: $primary;
+            }
+        }
+
+        .menu-content {
+            flex: 2;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-weight: bold;
-            transition: all 0.3s linear;
-            border-right: 3px solid $tertiary;
-            margin-right: 50px;
-            flex: 1;
-            color: $tertiary;
-            padding: $padding;
-            white-space: pre;
+        }
+    }
 
-            @media only screen and (max-width: $tablet-sm) {
-                border-bottom: 3px solid $tertiary;
+    .menu-desktop.right {
+        flex-direction: row-reverse;
+
+        .menu-selector {
+            .selector {
                 border-right: none;
                 margin-right: 0;
+                border-left: 3px solid $tertiary;
+                margin-left: 50px;
+            }
+
+            .selector:hover {
+                cursor: pointer;
+                color: $primary;
+            }
+
+            .selector.selected {
+                flex: 2;
+                font-weight: bold;
+                border-color: $secondary;
+                color: $primary;
             }
         }
-
-        .selector:hover {
-            cursor: pointer;
-            color: $primary;
-        }
-
-        .selector.selected {
-            flex: 2;
-            font-weight: bold;
-            border-color: $secondary;
-            color: $primary;
-        }
     }
 
-    .menu-content {
-        flex: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-.menu.right {
-    flex-direction: row-reverse;
-
-    @media only screen and (max-width: $tablet-sm) {
+    .menu-mobile {
+        display: none;
         flex-direction: column;
-    }
 
-    .menu-selector {
-        .selector {
-            border-right: none;
-            margin-right: 0;
-            border-left: 3px solid $tertiary;
-            margin-left: 50px;
+         @media only screen and (max-width: $tablet-sm) {
+            display: flex;
+        }
 
-            @media only screen and (max-width: $tablet-sm) {
-                border-bottom: 3px solid $tertiary;
-                border-left: none;
-                margin-left: 0;
+        .menu-selector {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            border-bottom: 2px solid $secondary;
+            margin-bottom: $margin;
+            padding: $padding-sm;
+            cursor: pointer;
+
+            .icon {
+                color: $tertiary;
             }
         }
 
-        .selector:hover {
-            cursor: pointer;
-            color: $primary;
-        }
 
-        .selector.selected {
-            flex: 2;
-            font-weight: bold;
-            border-color: $secondary;
-            color: $primary;
+        .menu-dropdown {
+            position: absolute;
+            top: 45px;
+            width: 100%;
+            box-shadow: 0 5px 5px 0 rgba(black, 0.5);
+
+            .selector {
+                display: flex;
+                flex: 1;
+                background: $bg;
+                padding: $padding-sm;
+                color: $tertiary;
+                border-bottom: 1px solid $tertiary;
+                font-weight: bold;
+                font-size: $font-size-sm;
+            }
+
+            .selector:last-child {
+                border-bottom: none;
+            }
+
+            .selector.selected {
+                color: $primary;
+            }
+
+             .selector:hover {
+                cursor: pointer;
+                color: $primary;
+            }
         }
     }
 }

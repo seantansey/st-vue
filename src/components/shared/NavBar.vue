@@ -66,7 +66,6 @@ export default {
       handleScroll(event) {
           // add a throttle to this
           if (window.scrollY > 0) {
-              console.log('hit')
               this.pageScrolled = true
               return
           }

@@ -7,25 +7,7 @@
             @select="selectExperience"
         >
              <div class="job-overview">
-                <!-- <div class="job-company">
-                    <h4>{{ selectedExperience.company }}</h4>
-                    <div class="job-location">
-                        <font-awesome-icon icon="fa-solid fa-location-dot" />
-                        <span class="location-text">{{ selectedExperience.location }}</span>
-                    </div>
-                </div> -->
-                <!-- <div v-for="(title, index) in selectedExperience.titles" :key="title" class="job-role">
-                    <h3 :class="{ current: index === 0 }">{{ title }}</h3>
-                    <div class="job-dates">
-                        <font-awesome-icon icon="fa-solid fa-calendar" />
-                        <span class="date-text">{{ selectedExperience.dates[index] }}</span>
-                    </div>
-                </div> -->
-
-
-
-                <h3>{{ selectedExperience.titles }}<span class="green"><span class="grey"> // </span>{{ selectedExperience.company }}</span></h3>
-
+                <h3>{{ selectedExperience.titles }}<span class="green"><span class="grey"> @ </span>{{ selectedExperience.company }}</span></h3>
                 <div class="job-data">
                     <font-awesome-icon icon="fa-solid fa-calendar" />
                     <span class="job-data-text">{{ selectedExperience.dates }}</span>
@@ -33,8 +15,15 @@
                     <span class="job-data-text">{{ selectedExperience.location }}</span>
                 </div>
                 <ul>
-                    <li v-for="(highlight, index) in selectedExperience.highlights" :key="index">{{ highlight }}</li>
+                    <li v-for="(highlight, index) in selectedExperience.highlights" :key="index">
+                        <span class="bullet-point"><font-awesome-icon icon="fa-solid fa-chevron-right" size="sm" /></span>
+                        {{ highlight }}
+                    </li>
                 </ul>
+                <div v-if="technologies.length" class="job-technologies">
+                    Primary technologies
+                    <div class="technologies">{{ technologies }}</div>
+                </div>
             </div>
         </menu-selector>
     </section>
@@ -68,6 +57,11 @@ export default {
       experiences() {
           const { config } = this
           return config.experiences.map((exp) => exp.company)
+      },
+      technologies() {
+           const { config, selectedExperienceIndex } = this
+           const technologies = config.experiences[selectedExperienceIndex].technologies || []
+           return technologies.join(' · ')
       }
   }
 }
@@ -89,14 +83,13 @@ export default {
             flex: 2;
 
             h3 {
-                margin: 0 $margin-sm $margin-sm 0;
+                margin: 0 $margin-sm $margin-xs 0;
 
                  @media only screen and (max-width: $mobile) {
                     margin: $margin-sm 0 $margin-xs 0;
                 }
             }
             
-
             .current {
                 font-size: $font-size-lg;
                 color: $secondary;
@@ -147,8 +140,6 @@ export default {
                         text-align: left;
                     }
 
-
-
                     .date-text {
                         margin: 0 $margin-sm;
                         font-weight: bold;
@@ -157,21 +148,41 @@ export default {
             }
 
             .job-data {
-                font-size: $font-size-sm;
+                font-size: $font-size-xs;
                 color: $tertiary;
 
                 .job-data-text {
-                    margin: 0 $margin-sm;
+                    margin: 0 $margin 0 $margin-sm;
                     font-weight: bold;
                 }
             }
 
             ul {
-                padding-inline-start: $padding;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
             }
 
             li {
-                padding-bottom: $padding-sm;
+                display: flex;
+                margin: $margin-sm 0;
+
+                .bullet-point {
+                    margin-right: $margin;
+                    color: $secondary;
+                }
+            }
+
+            .job-technologies {
+                margin-top: $margin;
+                font-weight: bold;
+                color: $secondary;
+
+                .technologies {
+                    font-size: $font-size-sm;
+                    color: $primary;
+                    font-weight: normal;
+                }
             }
         }
 

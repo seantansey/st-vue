@@ -3,7 +3,7 @@
     <h1>About</h1>
     <div class="flex-row">
       <div class="about-content">
-        <h3>I'm Sean Tansey. A Full-Stack Software Engineer specializing in Front-End UI based out of Denver, Colorado.</h3>
+        <h3>I'm Sean Tansey. A Full-Stack Software Engineer specializing in Front-end Development based out of Denver, Colorado.</h3>
         <p>
           I enjoy building solutions for complex problems.
         </p>

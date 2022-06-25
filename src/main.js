@@ -17,7 +17,8 @@ import {
   faGem,
   faComment,
   faHeart,
-  faChevronLeft,
+  faChevronDown,
+  faChevronRight,
   faXmark,
   faCircleNodes
 } from '@fortawesome/free-solid-svg-icons'
@@ -64,7 +65,8 @@ library.add(
   faComment,
   faHeart,
   faDev,
-  faChevronLeft,
+  faChevronDown,
+  faChevronRight,
   faXmark,
   faCircleNodes
 )

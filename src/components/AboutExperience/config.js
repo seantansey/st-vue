@@ -3,59 +3,57 @@ export default {
         {
             company: 'IHS Markit',
             titles: 'Software Engineer',
-            // [
-            //     'Software Engineer',
-            //     'Assoc. Software Engineer II'
-            // ],
             dates: 'Oct 2020 - Present',
-            // [
-            //     'Mar 2022 - Present',
-            //     'Oct 2020 - Feb 2022'
-            // ],
             location: 'Boulder, CO / Remote',
             highlights: [
                 'As part of a small agile team developed new UI features for a sitewide redesign for a client in the financial industry',
-                'Refactored existing web components to support multi-tenancy, allowing onboarding of new regions',
-                'Added support for Google Analytics tracking',
+                'Refactored web components to support multi-tenancy allowing easy onboarding of new regions',
+                'Added support for Google Analytics tracking, allowing clients to track how users are using their site',
                 'Refactored components to meet accessibility requirements for ADA compliance',
-                'Built new node APIs to support new web features',
-                'Unit tested all new code written both front and back end'
+                'Built Node.js/Express API’s to support new web features',
+                'Unit tested all new code written on both on the front and back end with Jest'
+            ],
+            technologies: [
+                'JavaScript',
+                'Svelte',
+                'Vue',
+                'Node.js',
+                'Express',
+                'Jest',
+                'HTML',
+                'SCSS',
+                '.NET'
             ]
         },
         {
             company: 'Izoox, LLC',
             titles: 'Software Developer',
-            // [
-            //     'Software Developer',
-            //     'Jr. Software Developer'
-            // ],
             dates: 'Jul 2019 - Jun 2020',
-            // [
-            //     'Nov 2019 - Jun 2020',
-            //     'Jul 2019 - Oct 2019'
-            // ],
             location: 'Longmont, CO',
             highlights: [
-                'Lead developer on a cross platform iOS/Android React-Native mobile app',
+                'Single handedly developed the entire UI for a cross platform React-Native mobile app in 3 months (search “Intelligent Office Systems” on the App Store)',
                 'Lead front-end developer on a large interal application built in Vue, Apollo, GraphQL and Laravel',
                 'Supported an SEO overhaul and redesign on a site built in Ruby on Rails',
-                'Delivered feature updates and bug fixes on sites built in React, Laravel, Ruby on Rails and Wordpress',
+                'Delivered feature updates and bug fixes on client sites built in various frameworks/languages',
+            ],
+            technologies: [
+                'JavaScript',
+                'Vue',
+                'React',
+                'React-Native',
+                'Laravel',
+                'Php',
+                'Ruby on Rails',
+                'MySQL',
+                'TailwindCSS',
+                'HTML',
+                'Sass'
             ]
         },
         {
             company: 'Medtronic',
             titles: 'Packaging Engineer',
-            // [
-            //     'Packaging Engineer',
-            //     'Assoc. Packaging Engineer',
-            //     'Packaging Engineer (Contract)'
-            // ],
             dates: 'Aug 2015 - Jul 2018',
-            // [
-            //     'Dec 2017 - Jul 2018',
-            //     'Jun 2016 - Nov 2017',
-            //     'Aug 2015 - May-2016'
-            // ],
             location: 'Boulder, CO / Minneapolis, MN',
             highlights: [
                 'Developed and qualified a sterile packaging solution for a time sensitive project preventing a plant wide shut down',

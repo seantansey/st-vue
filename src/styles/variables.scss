@@ -42,16 +42,13 @@ $padding-xl: rem-calc(50);
 // // colors
 $primary: #fafafa; //tailwind cool grey 100
 $secondary: #10b981; //tailwind emerald 500
-$tertiary: #475569; //tailwind blue gray 600
+$tertiary: #64748b; //tailwind blue gray 500
 $error: #dc2626; //tailwind red 600;
 
 // background
 $bg: #111827; //tailwind cool grey 900
 
-
 $border-color: #475569;
-
-$bg-gradient: linear-gradient(141deg, rgba(17,24,39,1) 0%, rgba(31,41,55,1) 100%);
 
 h1 {
     margin: $margin-lg 0;

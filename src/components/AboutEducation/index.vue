@@ -7,7 +7,7 @@
       @select="selectEducation"
     >
       <div>
-         <h3>{{ selectedEducation.title }}<span class="green"><span class="grey"> // </span>{{ selectedEducation.program }}</span></h3>
+         <h3>{{ selectedEducation.program }}<span class="green"><span class="grey"> @ </span>{{ selectedEducation.title }}</span></h3>
           <div class="education-data">
               <font-awesome-icon icon="fa-solid fa-calendar" />
               <span class="education-data-text">{{ selectedEducation.dates }}</span>
