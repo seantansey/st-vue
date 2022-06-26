@@ -82,7 +82,7 @@ export default {
     header {
         position: sticky;
         top: 0;
-        font-weight: bold;
+        font-weight: $font-semibold;
         background: $bg;
         z-index: 1;
 
@@ -115,7 +115,7 @@ export default {
                         bottom: 0;
                         right: 5px;
                         font-size: 20px;
-                        font-weight: bolder;
+                        font-weight: $font-bold;
                     }
                 }
             }

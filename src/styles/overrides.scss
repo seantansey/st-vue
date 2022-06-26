@@ -1,0 +1,54 @@
+@import '@/styles/fonts.scss';
+@import '@/styles/variables.scss';
+
+body, #app {
+    min-height: 100%;
+    margin: 0;
+    background: $bg;
+    color: $primary;
+    font-family: 'Albert-Sans';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.no-scroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+  margin: $margin-lg 0;
+  font-weight: $font-bold;
+}
+
+.blog-post {
+
+    pre {
+      background: #000000;
+      font-size: $font-size;
+      padding: $padding;
+      color: $secondary;
+      overflow: auto;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: $secondary;
+    }
+
+    .highlight__panel-action {
+      display: none;
+    }
+    
+    .js-fullscreen-code-action {
+      display: none;
+    }
+}
+
+button {
+    font-family: Avenir;
+}

@@ -93,7 +93,7 @@ export default {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-weight: bold;
+                font-weight: $font-bold;
                 transition: all 0.3s linear;
                 border-right: 3px solid $tertiary;
                 margin-right: 50px;
@@ -110,7 +110,7 @@ export default {
 
             .selector.selected {
                 flex: 2;
-                font-weight: bold;
+                font-weight: $font-bold;
                 border-color: $secondary;
                 color: $primary;
             }
@@ -142,7 +142,7 @@ export default {
 
             .selector.selected {
                 flex: 2;
-                font-weight: bold;
+                font-weight: $font-bold;
                 border-color: $secondary;
                 color: $primary;
             }
@@ -162,7 +162,7 @@ export default {
             flex: 1;
             justify-content: space-between;
             align-items: center;
-            font-weight: bold;
+            font-weight: $font-bold;
             border-bottom: 2px solid $secondary;
             margin-bottom: $margin;
             padding: $padding-sm;
@@ -187,7 +187,7 @@ export default {
                 padding: $padding-sm;
                 color: $tertiary;
                 border-bottom: 1px solid $tertiary;
-                font-weight: bold;
+                font-weight: $font-bold;
                 font-size: $font-size-sm;
             }
 

@@ -2,7 +2,7 @@
   <div class="page">
     <nav-bar></nav-bar>
     <div class="page-content-container">
-      <img class="background-image" src="../../assets/circle-nodes-solid.svg">
+      <img class="background-image" src="@/assets/img/circle-nodes-solid.svg">
       <div class="page-content">
         <a v-if="backButton" class="back-button" @click="$router.back()">
           <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm"/>

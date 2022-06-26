@@ -88,17 +88,17 @@ export default {
   
           .logo-text {
             position: absolute;
-            bottom: -30px;
-            right: 20px;
-            font-weight: bold;
-            font-size: 160px;
+            bottom: -22px;
+            right: 16px;
+            font-weight: $font-bold;
+            font-size: 170px;
             color: $secondary;
           }
         }
 
         h1 {
           font-size: 70px;
-          font-weight: bold;
+          font-weight: $font-bold;
           margin: 0;
 
           @media only screen and (max-width: $tablet-sm) {
@@ -125,7 +125,7 @@ export default {
             text-align: center;
             margin: $margin $margin-sm;
             font-size: $font-size;
-            font-weight: bold;
+            font-weight: $font-bold;
             border: none;
             padding: $padding-xs $padding;
             text-decoration: none;

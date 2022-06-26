@@ -84,76 +84,15 @@ export default {
 
             h3 {
                 margin: 0 $margin-sm $margin-xs 0;
-
-                 @media only screen and (max-width: $mobile) {
-                    margin: $margin-sm 0 $margin-xs 0;
-                }
-            }
-            
-            .current {
-                font-size: $font-size-lg;
-                color: $secondary;
-            }
-
-            h4 {
-                margin-top: 0;
-                margin-bottom: $margin-sm;
-
-                @media only screen and (max-width: $mobile) {
-                    margin-bottom: $margin-xs;
-                }
-            }
-
-            .job-company {
-                display: flex;
-                justify-content: space-between;
-                
-                @media only screen and (max-width: $mobile) {
-                    flex-direction: column;
-                }
-
-                .job-location {
-                    font-size: $font-size-sm;
-                    color: $tertiary;
-
-                    .location-text {
-                        margin: 0 $margin-sm;
-                        font-weight: bold;
-                    }
-                }
-            }
-
-             .job-role {
-                display: flex;
-                justify-content: space-between;
-                
-                @media only screen and (max-width: $mobile) {
-                    flex-direction: column;
-                }
-
-                .job-dates {
-                    text-align: right;
-                    font-size: $font-size-sm;
-                    color: $tertiary;
-
-                    @media only screen and (max-width: $mobile) {
-                        text-align: left;
-                    }
-
-                    .date-text {
-                        margin: 0 $margin-sm;
-                        font-weight: bold;
-                    }
-                }
             }
 
             .job-data {
-                font-size: $font-size-xs;
+                font-size: $font-size-sm;
                 color: $tertiary;
 
                 .job-data-text {
                     margin: 0 $margin 0 $margin-sm;
-                    font-weight: bold;
+                    font-weight: $font-semibold;
                 }
             }
 
@@ -175,12 +114,13 @@ export default {
 
             .job-technologies {
                 margin-top: $margin;
-                font-weight: bold;
+                font-weight: $font-bold;
                 color: $secondary;
 
                 .technologies {
+                    margin-top: $margin-xs;
                     font-size: $font-size-sm;
-                    color: $primary;
+                    color: $tertiary;
                     font-weight: normal;
                 }
             }

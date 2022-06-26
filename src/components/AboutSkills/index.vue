@@ -66,7 +66,7 @@ export default {
       justify-content: space-around;
       flex-wrap: wrap;
       text-align: center;
-      font-weight: bold;
+      font-weight: $font-bold;
       font-size: $font-size-sm;
       
       i {

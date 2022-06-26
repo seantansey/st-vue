@@ -16,7 +16,6 @@
           </div>
       </div>
     </menu-selector>
-   
   </section>
 </template>
 
@@ -76,7 +75,7 @@ export default {
 
         .education-data-text {
             margin: 0 $margin-sm;
-            font-weight: bold;
+            font-weight: $font-semibold;
         }
     }
 

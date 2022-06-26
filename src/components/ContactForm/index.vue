@@ -90,7 +90,7 @@ export default {
             display: block;
             font-size: $font-size-xs;
             margin-bottom: $margin-xs;
-            font-weight: bold;
+            font-weight: $font-bold;
         }
 
         textarea + label {
@@ -105,7 +105,7 @@ export default {
             outline: none;
             color: $primary;
             padding: $padding-xs $padding-sm;
-            font-weight: bold;
+            font-weight: $font-bold;
             resize: none;
         }
 
@@ -141,13 +141,13 @@ export default {
         .success {
             color: $secondary;
             font-size: $font-size-sm;
-            font-weight: bold;
+            font-weight: $font-bold;
         }
 
         .error {
             color: $error;
             font-size: $font-size-sm;
-            font-weight: bold;
+            font-weight: $font-bold;
         }
 
         .fade-enter-active, .fade-leave-active {
