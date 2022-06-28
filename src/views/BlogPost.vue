@@ -12,6 +12,7 @@
 <script>
 import Page from '@/components/shared/Page.vue'
 import { getBlogPostBySlug } from '@/api/blog.js'
+import { metaTitle } from '@/router'
 
 export default {
   name: 'BlogPost',
@@ -36,6 +37,8 @@ export default {
       this.$router.push({ name: 'page-not-found' })
       return
     }
+    // set page title 
+    document.title = metaTitle(article.title)
     this.body = article.body_html
     this.cover = article.cover_image
     this.title = article.title
@@ -67,6 +70,4 @@ export default {
       color: $secondary;
     }
   }
-
- 
 </style>
