@@ -6,13 +6,14 @@
             :selectors="experiences"
             @select="selectExperience"
         >
-             <div class="job-overview">
-                <h3>{{ selectedExperience.titles }}<span class="green"><span class="grey"> @ </span>{{ selectedExperience.company }}</span></h3>
-                <div class="job-data">
-                    <font-awesome-icon icon="fa-solid fa-calendar" />
-                    <span class="job-data-text">{{ selectedExperience.dates }}</span>
-                    <font-awesome-icon icon="fa-solid fa-location-dot" />
-                    <span class="job-data-text">{{ selectedExperience.location }}</span>
+             <div class="job-content">
+                <div class="job-content-label">{{  selectedExperience.company }}</div>
+                <div v-for="position in selectedExperience.positions" :key="position.title">
+                    <h3>{{ position.title }}</h3>
+                    <div class="job-dates">
+                        <font-awesome-icon icon="fa-solid fa-calendar" class="job-date-icon"/>
+                        {{ formatDateString(position.start, position.end) }}
+                    </div>
                 </div>
                 <ul>
                     <li v-for="(highlight, index) in selectedExperience.highlights" :key="index">
@@ -20,9 +21,9 @@
                         {{ highlight }}
                     </li>
                 </ul>
-                <div v-if="technologies.length" class="job-technologies">
+                <div v-if="technologies.length" class="job-content-label">
                     Primary technologies
-                    <div class="technologies">{{ technologies }}</div>
+                    <div class="job-technologies">{{ technologies }}</div>
                 </div>
             </div>
         </menu-selector>
@@ -45,6 +46,19 @@ export default {
       }
   },
   methods: {
+      formatDateString(start, end) {
+          const options = { month: 'short', year: 'numeric' }
+          const months = end.getMonth() - start.getMonth() + 12 * (end.getFullYear() - start.getFullYear()) + 1
+          let duration
+          if (months % 12 === 0) {
+              duration = `${months / 12} yr`
+          } else if (months > 12) {
+              duration = `${Math.floor(months / 12)} yr ${months % 12} mos`
+          } else {
+              duration = `${months} mos`
+          }
+          return `${start.toLocaleDateString("en-US", options)} - ${end.toLocaleDateString("en-US", options)} (${duration})`
+      }, 
       selectExperience(index) {
           this.selectedExperienceIndex = index
       }
@@ -79,26 +93,31 @@ export default {
             border-bottom: 1px solid $border-color;
         }
 
-        .job-overview {
+        .job-content {
             flex: 2;
 
             h3 {
-                margin: 0 $margin-sm $margin-xs 0;
+                margin: $margin-xs 0;
             }
 
-            .job-data {
-                font-size: $font-size-sm;
-                color: $tertiary;
+            .job-content-label {
+                color: $secondary;
+                font-weight: $font-bold;
+            }
 
-                .job-data-text {
-                    margin: 0 $margin 0 $margin-sm;
-                    font-weight: $font-semibold;
+            .job-dates {
+                color: $tertiary;
+                font-size: $font-size-sm;
+                font-weight: $font-semibold;
+
+                .job-date-icon {
+                    margin-right: $margin-xs;
                 }
             }
 
             ul {
                 list-style-type: none;
-                margin: 0;
+                margin: 0 0 $margin 0;
                 padding: 0;
             }
 
@@ -113,24 +132,11 @@ export default {
             }
 
             .job-technologies {
-                margin-top: $margin;
-                font-weight: $font-bold;
-                color: $secondary;
-
-                .technologies {
-                    margin-top: $margin-xs;
-                    font-size: $font-size-sm;
-                    color: $tertiary;
-                    font-weight: normal;
-                }
+                margin-top: $margin-xs;
+                font-size: $font-size-sm;
+                color: $tertiary;
+                font-weight: $font-semibold;
             }
-        }
-
-        .grey {
-            color: $tertiary;
-        }
-        .green {
-            color: $secondary;
-        }     
+        }    
     }
 </style>

@@ -2,8 +2,18 @@ export default {
     experiences: [
         {
             company: 'IHS Markit',
-            titles: 'Software Engineer',
-            dates: 'Oct 2020 - Present',
+            positions: [
+                {
+                    title: 'Software Engineer',
+                    start: new Date('03/01/2022'),
+                    end: new Date()
+                },
+                {
+                    title: 'Assoc. Software Engineer II',
+                    start: new Date('10/01/2020'),
+                    end: new Date('03/01/2022')
+                },
+            ],
             location: 'Boulder, CO / Remote',
             highlights: [
                 'As part of a small agile team developed new UI features for a sitewide redesign for a client in the financial industry',
@@ -27,8 +37,18 @@ export default {
         },
         {
             company: 'Izoox, LLC',
-            titles: 'Software Developer',
-            dates: 'Jul 2019 - Jun 2020',
+            positions: [
+                {
+                    title: 'Software Developer',
+                    start: new Date('10/01/2019'),
+                    end: new Date('07/01/2020')
+                },
+                {
+                    title: 'Jr. Software Developer',
+                    start: new Date('07/01/2019'),
+                    end: new Date('10/01/2019')
+                },
+            ],
             location: 'Longmont, CO',
             highlights: [
                 'Single handedly developed the entire UI for a cross platform React-Native mobile app in 3 months (search “Intelligent Office Systems” on the App Store)',
@@ -52,8 +72,23 @@ export default {
         },
         {
             company: 'Medtronic',
-            titles: 'Packaging Engineer',
-            dates: 'Aug 2015 - Jul 2018',
+            positions: [
+                {
+                    title: 'Packaging Engineer',
+                    start: new Date('12/01/2017'),
+                    end: new Date('07/01/2018')
+                },
+                {
+                    title: 'Assoc. Packaging Engineer',
+                    start: new Date('06/01/2016'),
+                    end: new Date('12/01/2017')
+                },
+                {
+                    title: 'Packaging Engineer (Contract)',
+                    start: new Date('08/01/2015'),
+                    end: new Date('06/01/2016')
+                },
+            ],
             location: 'Boulder, CO / Minneapolis, MN',
             highlights: [
                 'Developed and qualified a sterile packaging solution for a time sensitive project preventing a plant wide shut down',

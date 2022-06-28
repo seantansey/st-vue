@@ -139,14 +139,23 @@ export default {
             border: 1px solid $secondary;
             color: $primary;
             background: $secondary;
+            transition: background 0.3s;
           }
 
-           .contact {
+          .learn-more:hover {
+            background: $secondary-hover;
+          }
+
+          .contact {
             border: 1px solid $secondary;
             color: $secondary;
             background: transparent;
+            transition: opacity 0.3s;
           }
 
+          .contact:hover {
+            opacity: .8;
+          }
         }
       }  
   }
@@ -158,5 +167,4 @@ export default {
       transform: rotate(360deg)
     }
   }
-
 </style>

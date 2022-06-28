@@ -119,7 +119,6 @@ export default {
         .menu-content {
             flex: 2;
             display: flex;
-            justify-content: center;
             align-items: center;
         }
     }
@@ -172,7 +171,6 @@ export default {
                 color: $tertiary;
             }
         }
-
 
         .menu-dropdown {
             position: absolute;

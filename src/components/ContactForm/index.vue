@@ -105,12 +105,12 @@ export default {
             outline: none;
             color: $primary;
             padding: $padding-xs $padding-sm;
-            font-weight: $font-bold;
             resize: none;
         }
 
         textarea {
             font-family: inherit;
+            font-size: $font-size-sm;
             min-height: 200px;
             border: 1px solid #334155;
         }
