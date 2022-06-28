@@ -21,6 +21,10 @@ h1 {
   font-weight: $font-bold;
 }
 
+input, textarea {
+  -webkit-appearance: none;
+}
+
 .blog-post {
 
     pre {
