@@ -137,7 +137,7 @@ export default {
 
           .learn-more {
             border: 1px solid $secondary;
-            color: $primary;
+            color: $button-white;
             background: $secondary;
             transition: background 0.3s;
           }

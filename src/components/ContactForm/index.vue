@@ -1,19 +1,19 @@
 <template>
   <form @submit.prevent="submitForm" class="contact-form">
     <div class="form-input">
-        <input v-model="name" type="text" placeholder="George Oscar Bluth, Sr." :class="{ complete: name }">
+        <input v-model="name" type="text" placeholder="John Doe" :class="{ complete: name }">
         <label>Name</label>
     </div>
      <div class="form-input">
-        <input v-model="email" type="email" placeholder="george.oscar@bluthcompany.com" :class="{ complete: email }">
+        <input v-model="email" type="email" placeholder="john.doe@example.com" :class="{ complete: email }">
         <label>Email</label>
     </div>
      <div class="form-input">
-        <input v-model="subject" type="text" placeholder="Finances.." :class="{ complete: subject }">
+        <input v-model="subject" type="text" placeholder="Subject" :class="{ complete: subject }">
         <label>Subject</label>
     </div>
      <div class="form-input">
-        <textarea v-model="message" placeholder="There’s always money in the banana stand...." :class="{ complete: message }"></textarea>
+        <textarea v-model="message" placeholder="Brief description of the services you are looking for..." :class="{ complete: message }"></textarea>
         <label>Message</label>
     </div>
     <div class="button-row">
@@ -158,21 +158,18 @@ export default {
         }
     }
 
-    button {
+     button {
+        color: $button-white;
         background: $secondary;
-        padding: $padding-xs $padding;
-        border: none;
-        color: $primary;
         font-size: $font-size-sm;
-        margin-left: $margin;
-
-        .submit-icon {
-            margin-left: $margin-xs;
-        }
+        font-weight: $font-semibold;
+        border: none;
+        padding: $padding-xs $padding;
+        transition: background 0.3s;
     }
 
     button:hover {
-        outline: 1px solid $tertiary;
+        background: $secondary-hover;
         cursor: pointer;
     }
 
