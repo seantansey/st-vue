@@ -77,11 +77,10 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to, from, next) => {
-  if (to.meta && to.meta.title) {
+router.afterEach((to) => {
+  Vue.nextTick(() => {
     document.title = metaTitle(to.meta.title)
-  }
-  next()
+  })
 })
 
 export default router
