@@ -142,12 +142,14 @@ export default {
             color: $secondary;
             font-size: $font-size-sm;
             font-weight: $font-bold;
+            margin-right: $margin;
         }
 
         .error {
             color: $error;
             font-size: $font-size-sm;
             font-weight: $font-bold;
+            margin-right: $margin;
         }
 
         .fade-enter-active, .fade-leave-active {

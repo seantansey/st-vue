@@ -34,7 +34,8 @@ export default {
                 ['Git', 'devicon-git-plain'],
                 ['Google Analytics', 'devicon-google-plain'],
                 ['Prometheus', 'devicon-prometheus-original'],
-                ['NGINX', 'devicon-nginx-original']
+                ['NGINX', 'devicon-nginx-original'],
+                ['AWS', 'devicon-amazonwebservices-plain-wordmark']
             ]
         }
     ]
