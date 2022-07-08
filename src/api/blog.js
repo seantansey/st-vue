@@ -1,11 +1,11 @@
 import { dataCall } from "./api"
 
 const fetchAllPosts = () => {
-    return fetch(`${process.env.VUE_APP_DEV_TO_URL}?username=${process.env.VUE_APP_DEV_USERNAME}`)
+    return fetch('https://dev.to/api/articles?username=seantansey')
 }
 
 const fetchPostBySlug = (slug) => {
-    return fetch(`${process.env.VUE_APP_DEV_TO_URL}/${process.env.VUE_APP_DEV_USERNAME}/${slug}`)
+    return fetch(`https://dev.to/api/articles/seantansey/${slug}`)
 }
 
 export const getAllBlogPosts = () => {

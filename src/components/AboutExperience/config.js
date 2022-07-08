@@ -11,7 +11,7 @@ export default {
                 {
                     title: 'Assoc. Software Engineer II',
                     start: new Date('10/01/2020'),
-                    end: new Date('03/01/2022')
+                    end: new Date('02/01/2022')
                 },
             ],
             location: 'Boulder, CO / Remote',
@@ -40,8 +40,8 @@ export default {
             positions: [
                 {
                     title: 'Software Developer',
-                    start: new Date('10/01/2019'),
-                    end: new Date('07/01/2020')
+                    start: new Date('11/01/2019'),
+                    end: new Date('06/01/2020')
                 },
                 {
                     title: 'Jr. Software Developer',
@@ -81,12 +81,12 @@ export default {
                 {
                     title: 'Assoc. Packaging Engineer',
                     start: new Date('06/01/2016'),
-                    end: new Date('12/01/2017')
+                    end: new Date('11/01/2017')
                 },
                 {
                     title: 'Packaging Engineer (Contract)',
                     start: new Date('08/01/2015'),
-                    end: new Date('06/01/2016')
+                    end: new Date('05/01/2016')
                 },
             ],
             location: 'Boulder, CO / Minneapolis, MN',
