@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "npx vue-cli-service serve --mode development",
-    "build": "npx vue-cli-service build --mode production"
+    "serve": "npx vue-cli-service serve",
+    "build": "npx vue-cli-service build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
