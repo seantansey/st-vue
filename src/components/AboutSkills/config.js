@@ -35,7 +35,7 @@ export default {
                 ['Google Analytics', 'devicon-google-plain'],
                 ['Prometheus', 'devicon-prometheus-original'],
                 ['NGINX', 'devicon-nginx-original'],
-                ['AWS', 'devicon-amazonwebservices-plain-wordmark']
+                ['DigitalOcean', 'devicon-digitalocean-plain-wordmark']
             ]
         }
     ]
