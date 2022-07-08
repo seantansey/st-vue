@@ -51,7 +51,7 @@ export default {
             ],
             location: 'Longmont, CO',
             highlights: [
-                'Single handedly developed the entire UI for a cross platform React-Native mobile app in 3 months (search “Intelligent Office Systems” on the App Store)',
+                'Single handedly developed the entire UI for a cross platform React-Native mobile app in 3 months',
                 'Lead front-end developer on a large interal application built in Vue, Apollo, GraphQL and Laravel',
                 'Supported an SEO overhaul and redesign on a site built in Ruby on Rails',
                 'Delivered feature updates and bug fixes on client sites built in various frameworks/languages',

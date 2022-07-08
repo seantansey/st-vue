@@ -15,7 +15,7 @@
         </p>
       </div>
       <div class="about-image">
-        <img class="profile-picture" src="@/assets/img/IMG_1171_2-removebg.png">
+        <img class="profile-picture" src="@/assets/img/galvanize-headshot.jpg">
       </div>
     </div>
   </section>
