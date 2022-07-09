@@ -8,7 +8,7 @@
           I enjoy building solutions for complex problems.
         </p>
         <p>
-          While trained in full-stack development I've found myself drawn to building front-ends from the ground up in both web and mobile applications. 
+          While trained in full-stack development I've found myself drawn to building UI's from the ground up in both web and mobile applications. 
         </p>
         <p>
           When I'm not coding you'll find me out snowboarding, fishing, playing guitar, or enjoying the numerous outdoor activities Colorado has to offer.
