@@ -2,7 +2,7 @@ export default {
     education: [
         {
             title: 'Galvanize',
-            program: 'Web Development Immsersive',
+            program: 'Web Development Immersive',
             dates: 'Oct 2018 - Mar 2019',
             location: 'Boulder, Colorado'
         },
