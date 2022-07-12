@@ -46,7 +46,7 @@ export default {
   name: 'Navbar',
   data() {
       return {
-          links: ['about', 'blog', 'portfolio', 'contact'],
+          links: ['about', 'blog', 'contact'],
           pageScrolled: false
       }
   },
