@@ -79,9 +79,11 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 
-Vue.use(VueGtag, {
-  config: { id: "G-W916T0SHCC" }
-}, router);
+if (window.location.hostname !== 'localhost') {
+  Vue.use(VueGtag, {
+    config: { id: "G-W916T0SHCC" }
+  }, router);
+}
 
 new Vue({
   router,
