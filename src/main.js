@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueGtag from 'vue-gtag'
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -77,6 +78,10 @@ library.add(
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
+
+Vue.use(VueGtag, {
+  config: { id: "G-W916T0SHCC" }
+}, router);
 
 new Vue({
   router,
