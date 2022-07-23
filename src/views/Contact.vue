@@ -49,10 +49,12 @@ export default {
     h1 {
       font-size: $font-size-header;
       border-bottom: 1px solid $tertiary;
+      padding-bottom: $padding-xs;
     }
 
     h3 {
       margin-top: 0;
+      color: $secondary;
       margin-bottom: $margin-sm;
     }
 
@@ -71,14 +73,6 @@ export default {
       margin-right: $margin-lg;
     }
 
-    h1 {
-      font-size: $font-size-header;
-    }
-
-    h3 {
-      color: $secondary;
-    }
-
     a {
       display: flex;
       align-items: center;
@@ -95,23 +89,6 @@ export default {
       color: $secondary;
       text-decoration: underline;
     }
-
-    
-
-    // .social-text {
-
-    // }
-
-    // .github {
-    //   display: block;
-    //   margin: $margin-sm 0;
-    //   text-decoration: none;
-    // }
-
-    // .github:hover {
-    //   color: $secondary;
-    //   text-decoration: underline;
-    // }
 
     .contact-form-wrapper {
       flex: 1;

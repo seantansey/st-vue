@@ -34,8 +34,9 @@ export default {
     margin-bottom: $margin-xl;
 
     h1 {
-       font-size: $font-size-header;
-       border-bottom: 1px solid $border-color;
+      font-size: $font-size-header;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: $padding-xs;
     }
     
     .flex-row {

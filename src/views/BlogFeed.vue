@@ -62,6 +62,7 @@ export default {
     h1 {
       font-size: $font-size-header;
       border-bottom: 1px solid $tertiary;
+      padding-bottom: $padding-xs;
     }
 
     h3 {

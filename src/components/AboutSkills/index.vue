@@ -59,6 +59,7 @@ export default {
     h1 {
       font-size: $font-size-header;
       border-bottom: 1px solid $border-color;
+      padding-bottom: $padding-xs;
     }
 
     .logo-row {

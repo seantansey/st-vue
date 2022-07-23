@@ -62,6 +62,7 @@ export default {
       font-size: $font-size-header;
       text-align: right;
       border-bottom: 1px solid $border-color;
+      padding-bottom: $padding-xs;
     }
 
     h3 {
