@@ -18,56 +18,38 @@ export const metaTitle = (str) => {
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
-    meta: {
-      title: 'Home'
-    }
+    name: 'Home',
+    component: Home
   },
   {
     path: '/about',
-    name: 'about',
-    component: About,
-    meta: {
-      title: 'About'
-    }
+    name: 'About',
+    component: About
   },
   {
     path: '/blog',
-    name: 'blog',
-    component: BlogFeed,
-    meta: {
-      title: 'Blog'
-    }
+    name: 'Blog',
+    component: BlogFeed
   },
   {
     path: '/blog/:id',
-    name: 'blog-post',
+    name: 'Blog-Post',
     component: BlogPost
   },
   {
     path: '/portfolio',
-    name: 'portfolio',
-    component: Portfolio,
-    meta: {
-      title: 'Portfolio'
-    }
+    name: 'Portfolio',
+    component: Portfolio
   },
   {
     path: '/contact',
-    name: 'contact',
-    component: Contact,
-    meta: {
-      title: 'Contact'
-    }
+    name: 'Contact',
+    component: Contact
   },
   {
     path: '*',
-    name: 'page-not-found',
-    component: PageNotFound,
-    meta: {
-      title: '404'
-    }
+    name: 'Page-Not-Found',
+    component: PageNotFound
   }
 ]
 
@@ -79,7 +61,7 @@ const router = new VueRouter({
 
 router.afterEach((to) => {
   Vue.nextTick(() => {
-    document.title = metaTitle(to.meta.title)
+    document.title = metaTitle(to.name)
   })
 })
 

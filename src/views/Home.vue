@@ -8,10 +8,10 @@
             <h1 class="text-1">Development</h1>
             <p>Helping people turn their ideas into elegant and effective digital solutions.<br> Need a website or app? Not sure how to get started? Lets chat...</p>
             <div class="button-row">
-                <router-link :to="{ name: 'about'}" class="learn-more">
+                <router-link :to="{ name: 'About'}" class="learn-more">
                     Learn more
                 </router-link>
-                <router-link :to="{ name: 'contact'}" class="contact">
+                <router-link :to="{ name: 'Contact'}" class="contact">
                     Contact
                 </router-link>
             </div>

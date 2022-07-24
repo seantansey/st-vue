@@ -13,6 +13,7 @@
 import Page from '@/components/shared/Page.vue'
 import { getBlogPostBySlug } from '@/api/blog.js'
 import { metaTitle } from '@/router'
+import { mapState } from 'vuex'
 
 export default {
   name: 'BlogPost',
@@ -30,12 +31,23 @@ export default {
       url: ''
     }
   },
+  computed: mapState({
+    trackUser: state => state.trackUser
+  }),
   async mounted() {
+    const { trackUser } = this
     const { id } = this.$route.params
     const article = await getBlogPostBySlug(id)
     if (article.error) {
-      this.$router.push({ name: 'page-not-found' })
+      this.$router.push({ name: 'Page-Not-Found' })
       return
+    }
+    if (trackUser) {
+      this.$gtag.event('page_view', {
+        page_title: article.title,
+        page_path: id,
+        page_location: window.location.href
+      })
     }
     // set page title 
     document.title = metaTitle(article.title)

@@ -10,7 +10,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'App',
   computed: mapState({
-    mobileMenuOpen: state => state.ui.mobileMenuOpen
+    mobileMenuOpen: state => state.mobileMenuOpen
   })
 }
 </script>
