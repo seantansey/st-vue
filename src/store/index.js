@@ -5,16 +5,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    ui: {
-      mobileMenuOpen: false
-    }
+    mobileMenuOpen: false,
+    trackUser: false
   },
   mutations: {
-    toggleMobileMenu (state) {
-      state.ui.mobileMenuOpen = !state.ui.mobileMenuOpen
+    TOGGLE_MOBILE_MENU (state) {
+      state.mobileMenuOpen = !state.mobileMenuOpen
+    },
+    SET_TRACK_USER (state, shouldTrackUser) {
+      state.trackUser = shouldTrackUser
     }
   },
   actions: {
+    toggleMobileMenu ({ commit }) {
+      commit('TOGGLE_MOBILE_MENU')
+    },
+    setTrackUser ({ commit }, shouldTrackUser) {
+      commit('SET_TRACK_USER', shouldTrackUser)
+    }
   },
   modules: {
   }

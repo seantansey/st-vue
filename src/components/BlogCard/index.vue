@@ -1,5 +1,5 @@
 <template>
-    <router-link class="blog-card" :to="{ name: 'blog-post', params: { id: slug }}">
+    <router-link class="blog-card" :to="{ name: 'Blog-Post', params: { id: slug }}">
         <font-awesome-icon icon="fa-brands fa-dev" size="4x" class="dev-icon"/>
         <div class="blog-content">
             <div class="blog-content-row">

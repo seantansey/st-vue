@@ -3,85 +3,25 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueGtag from 'vue-gtag'
+import FontAwesomeIcon from './assets/fontAwesome'
 
-/* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
-
-/* import specific icons */
-import { 
-  faBars,
-  faEnvelope,
-  faArrowRight,
-  faCalendar,
-  faLocationDot,
-  faPaperPlane,
-  faGem,
-  faComment,
-  faHeart,
-  faChevronDown,
-  faChevronRight,
-  faChevronLeft,
-  faXmark,
-  faCircleNodes
-} from '@fortawesome/free-solid-svg-icons'
-
-import { 
-  faJsSquare,
-  faVuejs,
-  faReact,
-  faHtml5,
-  faCss3,
-  faSass,
-  faNode,
-  faLaravel,
-  faLinkedin,
-  faGithub,
-  faPhp,
-  faDev,
-} from '@fortawesome/free-brands-svg-icons'
-
-
-/* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-/* add icons to the library */
-library.add(
-  faBars, 
-  faJsSquare, 
-  faVuejs, 
-  faReact,
-  faHtml5,
-  faCss3,
-  faSass,
-  faNode,
-  faLaravel,
-  faLinkedin,
-  faGithub,
-  faEnvelope,
-  faArrowRight,
-  faCalendar,
-  faLocationDot,
-  faPaperPlane,
-  faGem,
-  faPhp,
-  faComment,
-  faHeart,
-  faDev,
-  faChevronDown,
-  faChevronRight,
-  faChevronLeft,
-  faXmark,
-  faCircleNodes
-)
-
-/* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 
-if (window.location.hostname !== 'localhost') {
+store.dispatch('setTrackUser', window.location.hostname !== 'localhost')
+
+if (store.state.trackUser) {
   Vue.use(VueGtag, {
-    config: { id: "G-W916T0SHCC" }
+    pageTrackerExcludedRoutes: ['Blog-Post'],
+    config: { id: "G-W916T0SHCC" },
+    pageTrackerTemplate(to, from) {
+      return {
+        page_title: to.name,
+        page_path: to.path || to.fullPath,
+        page_location: window.location.href
+      }
+    }
   }, router);
 }
 

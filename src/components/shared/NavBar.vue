@@ -19,9 +19,9 @@
             </div>  
             <div v-if="mobileMenuOpen" class="navbar-extended">
                 <div class="menu-content">
-                    <router-link v-for="link in links" :to="{ name: link }" :key="link"  @click.native="toggleMobileMenu" class="router-link">
+                    <a v-for="link in links" :key="link" @click="mobileRoute(link)" class="router-link" :class="{ 'router-link-active': $router.currentRoute.name === link }">
                         {{ link }}
-                    </router-link>
+                    </a>
                     <div class="social-links">
                         <a class="linkedin" href="https://www.linkedin.com/in/seantansey/" target="_blank">
                             <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
@@ -46,12 +46,12 @@ export default {
   name: 'Navbar',
   data() {
       return {
-          links: ['about', 'blog', 'contact'],
+          links: ['About', 'Blog', 'Contact'],
           pageScrolled: false
       }
   },
   computed: mapState({
-    mobileMenuOpen: state => state.ui.mobileMenuOpen
+    mobileMenuOpen: state => state.mobileMenuOpen
   }),
   mounted() {
       window.addEventListener('scroll', this.handleScroll)
@@ -60,8 +60,12 @@ export default {
       window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+      mobileRoute(link) {
+          this.$router.push({ name: link })
+          this.$store.dispatch('toggleMobileMenu')
+      },
       toggleMobileMenu() {
-          this.$store.commit('toggleMobileMenu')
+        this.$store.dispatch('toggleMobileMenu')
       },
       handleScroll(event) {
           // add a throttle to this
@@ -70,7 +74,6 @@ export default {
               return
           }
           this.pageScrolled = false
-
       }
   }
 }
@@ -204,7 +207,6 @@ export default {
             padding: 0 $padding;
             transition: color 0.3s;
             font-size: $font-size-sm;
-            text-transform: capitalize;
 
             @media only screen and (max-width: $tablet-sm) {
                 margin: 0;
