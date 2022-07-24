@@ -19,7 +19,7 @@
             </div>  
             <div v-if="mobileMenuOpen" class="navbar-extended">
                 <div class="menu-content">
-                    <a v-for="link in links" :key="link" @click="mobileRoute(link)" class="router-link" :class="{ 'router-link-active': $router.currentRoute.name === link }">
+                    <a v-for="link in links" :key="link" @click="mobileRoute(link)" class="router-link" :class="{ 'router-link-active': routeMatch(link) }">
                         {{ link }}
                     </a>
                     <div class="social-links">
@@ -60,6 +60,10 @@ export default {
       window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+      routeMatch (link) {
+        const { path, name } = this.$router.currentRoute
+        return link === name || link.toLowerCase() === path.split('/')[1]
+      },
       mobileRoute(link) {
           this.$router.push({ name: link })
           this.$store.dispatch('toggleMobileMenu')
@@ -207,6 +211,7 @@ export default {
             padding: 0 $padding;
             transition: color 0.3s;
             font-size: $font-size-sm;
+            cursor: pointer;
 
             @media only screen and (max-width: $tablet-sm) {
                 margin: 0;
