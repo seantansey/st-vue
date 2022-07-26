@@ -43,7 +43,7 @@ export default {
       return
     }
     if (trackUser) {
-      this.$gtag.event('page_view', {
+      this.$gtag.pageview({
         page_title: article.title,
         page_path: id,
         page_location: window.location.href
