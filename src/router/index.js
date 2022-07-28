@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// importing route this way allows for lazy loading of content
+import { trackPageView } from '../utils/google-analytics'
+
+// importing routes this way allows for lazy loading of content
 const Home = () => import('../views/Home.vue')
 const About = () => import('../views/About.vue')
 const BlogFeed = () => import('../views/BlogFeed.vue')
@@ -60,6 +62,10 @@ const router = new VueRouter({
 })
 
 router.afterEach((to) => {
+  if (to.name !== 'Blog-Post') {
+    trackPageView(to.name, to.path || to.fullPath)
+  }
+
   Vue.nextTick(() => {
     document.title = metaTitle(to.name)
   })
