@@ -3,9 +3,9 @@
         <nav>
             <div class="navbar" :class="{ 'navbar-shadow': pageScrolled }">
                 <div class="website-logo-wrapper">
-                    <router-link to="/" class="website-logo">
+                    <a @click="route('Home')" class="website-logo">
                         <div class="website-logo-text">ST</div>
-                    </router-link>
+                    </a>
                 </div>
                 <div class="links">
                     <router-link v-for="link in links" :to="{ name: link }" :key="link" class="router-link">
@@ -19,7 +19,7 @@
             </div>  
             <div v-if="mobileMenuOpen" class="navbar-extended">
                 <div class="menu-content">
-                    <a v-for="link in links" :key="link" @click="mobileRoute(link)" class="router-link" :class="{ 'router-link-active': routeMatch(link) }">
+                    <a v-for="link in links" :key="link" @click="route(link)" class="router-link" :class="{ 'router-link-active': routeMatch(link) }">
                         {{ link }}
                     </a>
                     <div class="social-links">
@@ -64,7 +64,7 @@ export default {
         const { path, name } = this.$router.currentRoute
         return link === name || link.toLowerCase() === path.split('/')[1]
       },
-      mobileRoute(link) {
+      route(link) {
           this.$router.push({ name: link })
           this.$store.dispatch('toggleMobileMenu')
       },

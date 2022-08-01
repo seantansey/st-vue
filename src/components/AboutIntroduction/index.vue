@@ -12,10 +12,7 @@
           I particularly enjoy working with modern JavaScript frameworks such as Vue, React and Svelte. 
         </p>
         <p>
-         Currently employed at <a href="https://ihsmarkit.com/index.html" target="_blank">IHS Markit</a>, where I'm on building and maintaining UI's for multiple large clients in the financial industry.
-        </p>
-        <p>
-          When I'm not coding you'll find me out snowboarding, fishing, playing guitar, or enjoying the numerous outdoor activities Colorado has to offer.
+         Currently employed at <a href="https://ihsmarkit.com/index.html" target="_blank">IHS Markit</a>, where I build and maintain UI's for multiple large clients in the financial industry.
         </p>
       </div>
       <div class="about-image">
