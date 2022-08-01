@@ -54,7 +54,7 @@ export default {
 @import '@/styles/variables.scss';
 
   .about-skills {
-    margin-bottom: $margin-xl;
+    margin-bottom: $margin-section;
 
     h1 {
       font-size: $font-size-header;
@@ -69,6 +69,7 @@ export default {
       text-align: center;
       font-weight: $font-bold;
       font-size: $font-size-sm;
+      color: $quaternary;
       
       i {
         display: block;

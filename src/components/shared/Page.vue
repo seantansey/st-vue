@@ -58,10 +58,10 @@ export default {
 
       .page-content {
         position: relative;
-        max-width: 1200px;
+        max-width: 1000px;
         margin: auto;
         padding: 200px;
-        padding-top: $padding-lg;
+        padding-top: $padding-xl;
         min-height: 100%;
 
         @media only screen and (max-width: $tablet-lg) {
@@ -81,7 +81,7 @@ export default {
 
         .back-button {
           position: absolute;
-          top: 20px;
+          top: 40px;
           left: 200px;
           color: $secondary;
           text-decoration: none;

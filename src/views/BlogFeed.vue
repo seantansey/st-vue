@@ -61,7 +61,7 @@ export default {
 
     h1 {
       font-size: $font-size-header;
-      border-bottom: 1px solid $tertiary;
+      border-bottom: 1px solid $border-color;
       padding-bottom: $padding-xs;
     }
 
@@ -72,11 +72,11 @@ export default {
     .no-blog-posts {
       padding: $padding-xl 0;
       text-align: center;
-      color: $tertiary;
+      color: $quaternary;
     }
 
     p {
-      color: $tertiary;
+      color: $quaternary;
 
       a {
         color: $secondary;

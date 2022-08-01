@@ -85,7 +85,7 @@ export default {
 @import '@/styles/variables.scss';
 
     .about-experience {
-        margin-bottom: $margin-xl;
+        margin-bottom: $margin-section;
 
         h1 {
             font-size: $font-size-header;
@@ -125,6 +125,7 @@ export default {
             li {
                 display: flex;
                 margin: $margin-sm 0;
+                color: $quaternary;
 
                 .bullet-point {
                     margin-right: $margin;

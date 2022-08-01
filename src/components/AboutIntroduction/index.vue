@@ -3,12 +3,16 @@
     <h1>About</h1>
     <div class="flex-row">
       <div class="about-content">
-        <h3>I'm Sean Tansey. A Full-Stack Software Engineer specializing in Front-end Development based out of Denver, Colorado.</h3>
+        <h3>Hi, I'm Sean Tansey. A Fullstack Software Engineer specializing in Frontend Development based out of Denver, Colorado.</h3>
         <p>
           I enjoy building solutions for complex problems.
         </p>
         <p>
-          While trained in full-stack development I've found myself drawn to building UI's from the ground up in both web and mobile applications. 
+          While trained in fullstack development I've found myself drawn to building UI's from the ground up in both web and mobile applications.
+          I particularly enjoy working with modern JavaScript frameworks such as Vue, React and Svelte. 
+        </p>
+        <p>
+         Currently employed at <a href="https://ihsmarkit.com/index.html" target="_blank">IHS Markit</a>, where I'm on building and maintaining UI's for multiple large clients in the financial industry.
         </p>
         <p>
           When I'm not coding you'll find me out snowboarding, fishing, playing guitar, or enjoying the numerous outdoor activities Colorado has to offer.
@@ -31,7 +35,7 @@ export default {
 @import '@/styles/variables.scss';
 
   .about-introduction {
-    margin-bottom: $margin-xl;
+    margin-bottom: $margin-section;
 
     h1 {
       font-size: $font-size-header;
@@ -61,13 +65,27 @@ export default {
           color: $secondary;
           margin: 0;
         }
+
+        p {
+          color : $quaternary;
+        }
+
+        a {
+          color: $secondary;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
     }
 
     .about-image {
       flex: 1;
-
+      text-align: center;
       .profile-picture {
         width: 100%;
+        max-width: 400px;
         background: $secondary;
       }
     }
