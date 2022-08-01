@@ -28,12 +28,40 @@ input, textarea {
 
 .blog-post {
 
+    h2,
+    h3 {
+      margin-top: $margin;
+      margin-bottom: $margin-sm;
+    }
+
     pre {
-      background: #000000;
-      font-size: $font-size;
+      background: #1c1917;
       padding: $padding;
-      color: $secondary;
       overflow: auto;
+      font-family: monospace;
+      font-size: $font-size;
+
+      code {
+       
+        .kd {
+          color: #7c3aed; 
+        }
+        .k {
+          color: #2563eb;
+        }
+
+        .nx {
+          color: $secondary;
+        }
+
+        .c1 {
+          color: #78716c;
+        }
+
+        .s1 {
+          color: #c026d3;
+        }
+      }
     }
 
     img {
@@ -43,6 +71,11 @@ input, textarea {
 
     a {
       color: $secondary;
+    }
+
+    p {
+      color: $quaternary;
+      margin: $margin-sm 0;
     }
 
     .highlight__panel-action {

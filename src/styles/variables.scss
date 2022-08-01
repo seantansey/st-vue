@@ -33,25 +33,29 @@ $margin-xs: rem-calc(5);
 $margin-sm: rem-calc(10);
 $margin: rem-calc(20);
 $margin-lg: rem-calc(30);
-$margin-xl: rem-calc(50);
+$margin-xl: rem-calc(60);
+$margin-section: rem-calc(140);
 
 // padding
 $padding-xs: rem-calc(5);
 $padding-sm: rem-calc(10);
 $padding: rem-calc(20);
 $padding-lg: rem-calc(30);
-$padding-xl: rem-calc(50);
+$padding-xl: rem-calc(60);
 
 // colors
-$primary: #e5e5e5; //tailwind neutral 200
+$primary: #d1d5db; //tailwind gray 300
 $secondary: #10b981; //tailwind emerald 500
-$tertiary: #475569; //tailwind blue gray 600
+$tertiary: #4b5563; //tailwind gray 600
+$quaternary: #9ca3af; // tailwind gray 500
+$black: #000000;
+
 $error: #f87171; //tailwind red 600;
 
 // background
 $bg: #111827; //tailwind cool grey 900
 
-$border-color: #475569;
+$border-color: #374151;
 
 $secondary-hover: #0ea674;
 

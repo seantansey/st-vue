@@ -63,11 +63,10 @@ export default {
     }
 
     p {
-      color: $tertiary;
+      color: $quaternary;
       margin: 0;
       font-size: $font-size-sm;
       margin-bottom: $margin-lg;
-
     }
 
     a {

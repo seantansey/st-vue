@@ -56,7 +56,7 @@ export default {
 @import '@/styles/variables.scss';
 
   .about-education {
-    margin-bottom: $margin-xl;
+    margin-bottom: $margin-section;
 
     h1 {
       font-size: $font-size-header;
@@ -73,10 +73,10 @@ export default {
     .education-data {
         font-size: $font-size-sm;
         color: $tertiary;
+        font-weight: $font-semibold;
 
         .education-data-text {
             margin: 0 $margin-sm;
-            font-weight: $font-semibold;
         }
     }
 

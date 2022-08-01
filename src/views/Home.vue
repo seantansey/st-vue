@@ -46,7 +46,7 @@ export default {
         position: absolute;
         top: 0;
         height: 100%;
-        color: black;
+        color: $black;
         opacity: 0.2;
         animation-name: spin;
         animation-duration: 30s;

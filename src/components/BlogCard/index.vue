@@ -62,7 +62,7 @@ export default {
         display: flex;
         align-items: center;
         text-decoration: none;
-        margin: $margin-sm 0;
+        margin: $margin 0;
 
         .blog-content {
             flex: 1;
@@ -132,7 +132,7 @@ export default {
 
     .blog-card:hover {
         border-color: $secondary;
-        background: #161D2C80;
+        background: #161D2C85;
         cursor: pointer; 
     }
     
