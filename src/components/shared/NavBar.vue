@@ -12,9 +12,11 @@
                         {{ link }}
                     </router-link>
                 </div>
-                <button class="menu-button" @click="toggleMobileMenu">
-                    <font-awesome-icon v-if="mobileMenuOpen" icon="fa-solid fa-xmark" size="xl"/>
-                    <font-awesome-icon v-else icon="fa-solid fa-bars" size="xl"/>
+                <button v-if="mobileMenuOpen" class="menu-button" @click="closeMobileMenu">
+                    <font-awesome-icon  icon="fa-solid fa-xmark" size="xl"/>
+                </button>
+                 <button v-else class="menu-button" @click="openMobileMenu">
+                    <font-awesome-icon icon="fa-solid fa-bars" size="xl"/>
                 </button>
             </div>  
             <div v-if="mobileMenuOpen" class="navbar-extended">
@@ -66,10 +68,13 @@ export default {
       },
       route(link) {
           this.$router.push({ name: link })
-          this.$store.dispatch('toggleMobileMenu')
+          this.$store.dispatch('closeMobileMenu')
       },
-      toggleMobileMenu() {
-        this.$store.dispatch('toggleMobileMenu')
+      openMobileMenu() {
+        this.$store.dispatch('openMobileMenu')
+      },
+      closeMobileMenu() {
+        this.$store.dispatch('closeMobileMenu')
       },
       handleScroll(event) {
           // add a throttle to this

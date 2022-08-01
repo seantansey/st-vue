@@ -8,13 +8,19 @@ export default new Vuex.Store({
     mobileMenuOpen: false,
   },
   mutations: {
-    TOGGLE_MOBILE_MENU (state) {
-      state.mobileMenuOpen = !state.mobileMenuOpen
+    CLOSE_MOBILE_MENU (state) {
+      state.mobileMenuOpen = false
+    },
+    OPEN_MOBILE_MENU (state) {
+      state.mobileMenuOpen = true
     }
   },
   actions: {
-    toggleMobileMenu ({ commit }) {
-      commit('TOGGLE_MOBILE_MENU')
+    closeMobileMenu ({ commit }) {
+      commit('CLOSE_MOBILE_MENU')
+    },
+    openMobileMenu ({ commit }) {
+      commit('OPEN_MOBILE_MENU')
     }
   },
   modules: {
