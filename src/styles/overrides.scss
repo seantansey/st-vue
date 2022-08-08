@@ -35,31 +35,35 @@ input, textarea {
     }
 
     pre {
-      background: #1c1917;
-      padding: $padding;
+      background: #08090a;
+      padding: $padding-lg;
       overflow: auto;
       font-family: monospace;
       font-size: $font-size;
 
       code {
-       
-        .kd {
-          color: #7c3aed; 
+        .kd, .k {
+          color: #f39c12; 
         }
-        .k {
-          color: #2563eb;
+
+        .o {
+          color: #f9690e
         }
 
         .nx {
-          color: $secondary;
+          color: #7ed07e;
         }
 
         .c1 {
-          color: #78716c;
+          color: #808080;
         }
 
         .s1 {
-          color: #c026d3;
+          color: #f2ca27;
+        }
+
+        .mi {
+          color: #dda0dd;
         }
       }
     }
