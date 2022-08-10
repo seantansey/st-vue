@@ -1,6 +1,6 @@
 <template>
     <section class="about-experience">
-        <h1>Experience</h1>
+        <h2>Experience</h2>
         <menu-selector 
             :selected-index="selectedExperienceIndex"
             :selectors="experiences"
@@ -85,13 +85,10 @@ export default {
 @import '@/styles/variables.scss';
 
     .about-experience {
-        margin-bottom: $margin-section;
+        margin-bottom: $margin-xl;
 
-        h1 {
-            font-size: $font-size-header;
-            text-align: right;
-            border-bottom: 1px solid $border-color;
-            padding-bottom: $padding-xs;
+        h2 {
+            font-size: $font-size-xl;
         }
 
         .job-content {

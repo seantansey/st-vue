@@ -21,6 +21,7 @@ $font-size-xs: rem-calc(12);
 $font-size-sm: rem-calc(14);
 $font-size: rem-calc(16);
 $font-size-lg: rem-calc(20);
+$font-size-xl: rem-calc(28);
 $font-size-header: rem-calc(40); 
 
 // font-weight
@@ -34,7 +35,6 @@ $margin-sm: rem-calc(10);
 $margin: rem-calc(20);
 $margin-lg: rem-calc(30);
 $margin-xl: rem-calc(60);
-$margin-section: rem-calc(140);
 
 // padding
 $padding-xs: rem-calc(5);
@@ -44,10 +44,10 @@ $padding-lg: rem-calc(30);
 $padding-xl: rem-calc(60);
 
 // colors
-$primary: #d1d5db; //tailwind gray 300
+$primary: #e5e7eb; //tailwind gray 200
 $secondary: #10b981; //tailwind emerald 500
 $tertiary: #4b5563; //tailwind gray 600
-$quaternary: #9ca3af; // tailwind gray 500
+$quaternary: #9ca3af; // tailwind gray 400
 $black: #000000;
 
 $error: #f87171; //tailwind red 600;

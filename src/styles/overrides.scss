@@ -80,6 +80,11 @@ input, textarea {
     p {
       color: $quaternary;
       margin: $margin-sm 0;
+
+      img {
+        display: block;
+        margin: $margin auto;
+      }
     }
 
     .highlight__panel-action {

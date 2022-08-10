@@ -1,6 +1,6 @@
 <template>
   <section class="about-education">
-    <h1>Education</h1>
+    <h2>Education</h2>
     <menu-selector
       :selectors="schools"
       :selected-index="selectedEducationIndex"
@@ -56,13 +56,10 @@ export default {
 @import '@/styles/variables.scss';
 
   .about-education {
-    margin-bottom: $margin-section;
+    margin-bottom: $margin-xl;
 
-    h1 {
-      font-size: $font-size-header;
-      text-align: right;
-      border-bottom: 1px solid $border-color;
-      padding-bottom: $padding-xs;
+    h2 {
+      font-size: $font-size-xl;
     }
 
     h3 {

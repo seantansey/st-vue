@@ -4,13 +4,25 @@
             <div class="navbar" :class="{ 'navbar-shadow': pageScrolled }">
                 <div class="website-logo-wrapper">
                     <a @click="route('Home')" class="website-logo">
-                        <div class="website-logo-text">ST</div>
+                        <div class="website-logo-text-inner">ST</div>
                     </a>
+                    <div class="website-logo-text-outer">Development</div>
                 </div>
                 <div class="links">
                     <router-link v-for="link in links" :to="{ name: link }" :key="link" class="router-link">
                         {{ link }}
                     </router-link>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
+                            <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
+                        </a> 
+                        <a href="https://github.com/seantansey" target="_blank">
+                            <font-awesome-icon icon="fa-brands fa-github" size="xl" />
+                        </a>
+                        <a href="https://dev.to/stansey92" target="_blank">
+                            <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
+                        </a>
+                    </div>
                 </div>
                 <button v-if="mobileMenuOpen" class="menu-button" @click="closeMobileMenu">
                     <font-awesome-icon  icon="fa-solid fa-xmark" size="xl"/>
@@ -25,13 +37,13 @@
                         {{ link }}
                     </a>
                     <div class="social-links">
-                        <a class="linkedin" href="https://www.linkedin.com/in/seantansey/" target="_blank">
+                        <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
                             <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
                         </a> 
-                        <a class="github" href="https://github.com/seantansey" target="_blank">
+                        <a href="https://github.com/seantansey" target="_blank">
                             <font-awesome-icon icon="fa-brands fa-github" size="xl" />
                         </a>
-                        <a class="github" href="https://dev.to/stansey92" target="_blank">
+                        <a href="https://dev.to/stansey92" target="_blank">
                             <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
                         </a>
                     </div>
@@ -57,17 +69,19 @@ export default {
   }),
   mounted() {
       window.addEventListener('scroll', this.handleScroll)
+      window.addEventListener('resize', this.handleResize)
   },
   destroyed() {
       window.removeEventListener('scroll', this.handleScroll)
+      window.removeEventListener('resize', this.handleResize)
   },
   methods: {
       routeMatch (link) {
         const { path, name } = this.$router.currentRoute
         return link === name || link.toLowerCase() === path.split('/')[1]
       },
-      route(link) {
-          this.$router.push({ name: link })
+      async route(link) {
+          await this.$router.push({ name: link })
           this.$store.dispatch('closeMobileMenu')
       },
       openMobileMenu() {
@@ -83,6 +97,11 @@ export default {
               return
           }
           this.pageScrolled = false
+      },
+      handleResize(event) {
+        if (this.mobileMenuOpen && window.innerWidth > 768) {
+            this.closeMobileMenu()
+        }
       }
   }
 }
@@ -110,9 +129,7 @@ export default {
             .website-logo-wrapper {
                 display: flex;
                 flex-direction: row;
-                align-items: flex-end;
-                font-size: $font-size-sm;
-            
+                align-items: flex-end;            
                 .website-logo {
                     height: 40px;
                     width: 40px;
@@ -120,19 +137,23 @@ export default {
                     text-decoration: none;
                     position: relative;
                     margin-right: $margin-sm;
+                    cursor: pointer;
     
-                    .website-logo-text {
+                    .website-logo-text-inner {
                         color: $secondary;
                         position: absolute;
                         bottom: 0;
                         right: 5px;
-                        font-size: 20px;
+                        font-size: $font-size-lg;
                         font-weight: $font-bold;
                     }
                 }
+
+                .website-logo-text-outer {
+                    margin-bottom: 3px;
+                }
             }
 
-          
              .links {
                 height: 64px;
                 display: flex;
@@ -141,6 +162,25 @@ export default {
 
                 @media only screen and (max-width: $tablet-sm) {
                     display: none;
+                }
+            }
+
+             .social-links {
+                display: flex;
+                justify-content: space-between;
+
+                a {
+                    color: $tertiary;
+                    text-decoration: none;
+                    margin-left: $margin-lg;
+                }
+
+                a:first-child {
+                    margin-left: $margin;
+                }
+
+                a:hover {
+                    color: $quaternary;
                 }
             }
 
@@ -243,15 +283,4 @@ export default {
             background: $secondary;
         }
     }
-
-
-
-   
-
-   
-
-   
-
-
-
 </style>
