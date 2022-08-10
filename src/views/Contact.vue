@@ -1,7 +1,7 @@
 <template>
   <page>
     <div class="contact">
-      <h1>Contact</h1>
+      <h1><span class="fwd-slash">/</span>Contact</h1>
       <div class="flex-row">
         <div class="contact-info">
           <h3>Interested in working together? Have a question? Contact me through any of the means below!</h3>
@@ -50,6 +50,11 @@ export default {
       font-size: $font-size-header;
       border-bottom: 1px solid $border-color;
       padding-bottom: $padding-xs;
+
+      .fwd-slash {
+        color: $secondary;
+        margin-right: $margin-xs;
+      }
     }
 
     h3 {

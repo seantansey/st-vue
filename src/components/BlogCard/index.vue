@@ -1,21 +1,18 @@
 <template>
-    <router-link class="blog-card" :to="{ name: 'Blog-Post', params: { id: slug }}">
-        <font-awesome-icon icon="fa-brands fa-dev" size="4x" class="dev-icon"/>
-        <div class="blog-content">
-            <div class="blog-content-row">
-                <h3>{{ title }}</h3>
-                <p class="published">Published: {{ localDate }}</p>
-            </div>
-            <div class="blog-content-row">
-                <div class="reactions">
-                    <span class="blog-icon"><font-awesome-icon icon="fa-solid fa-heart" /> {{ reactions }}</span>
-                    <span class="blog-icon"><font-awesome-icon icon="fa-solid fa-comment" /> {{ comments }}</span>
-                    <span>{{ `${readTime} minute read` }}</span>
-                </div>
-                <p class="tags">{{ tags }}</p>
-            </div>
+    <div class="blog-card">
+        <div class="image-container">
+            <router-link :to="{ name: 'Blog-Post', params: { id: slug }}" class="router-link">
+                <img :src="img">
+            </router-link>
         </div>
-    </router-link>
+        <div class="blog-content">
+            <p class="tags">{{ tags }}</p>
+            <router-link :to="{ name: 'Blog-Post', params: { id: slug }}" class="router-link">
+                <h2>{{ title }}</h2>
+            </router-link>
+            <p class="description">{{ description }}</p>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -23,10 +20,8 @@
 export default {
   name: 'BlogCard',
   props: {
-      comments: Number,
-      date: String,
-      reactions: Number,
-      readTime: Number,
+      description: String,
+      img: String,
       slug: String,
       tagList: {
           type: Array,
@@ -39,9 +34,6 @@ export default {
   computed: {
       tags() {
           return this.tagList.map((tag) => `#${tag}`).join(' ')
-      },
-      localDate() {
-          return new Date(this.date).toDateString()
       }
   },
   methods: {
@@ -57,83 +49,64 @@ export default {
     
     .blog-card {
         color: $primary;
-        border-left: 3px solid $tertiary;
-        padding: $padding;
         display: flex;
-        align-items: center;
-        text-decoration: none;
-        margin: $margin 0;
+        margin: $margin-xl 0;
+
+         @media only screen and (max-width: $tablet-lg) {
+            flex-direction: column;
+        }
+
+        .image-container {
+            flex: 1;
+
+            img {
+                width: 100%;
+            }
+        }
 
         .blog-content {
             flex: 1;
-        }
-    
-        h3 {
-            margin: 0;
-            margin-bottom: $margin-sm;
-            font-size: $font-size-lg;
-            align-items: center;
-        }
-
-        .dev-icon {
-            color: $tertiary;
-            margin-right: $margin;
-
-             @media only screen and (max-width: $tablet-sm) {
-                display: none;
-            }
-        }
-
-        p {
-            margin: 0;
-            font-size: $font-size-sm;
-        }
-
-        .description {
-            margin: $margin 0;
-        }
-
-        .blog-content-row {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: $margin-lg;
 
-             @media only screen and (max-width: $tablet-sm) {
-                flex-direction: column;
+            @media only screen and (max-width: $tablet-lg) {
+                margin-left: 0;
+                margin-top: $margin-sm;
             }
+            .router-link {
+                text-decoration: none;
+                color: $primary;
 
-            .published {
-                color: $tertiary;
-                 
-                @media only screen and (max-width: $tablet-sm) {
-                    margin-bottom: $margin-sm;
-                }
+                h2 {
+                    margin: $margin-xs 0 $margin 0;
+                    align-items: center;
+                    font-size: $font-size-xl;
 
-            }
+                    @media only screen and (max-width: $tablet-lg) {
+                        margin-bottom: 0;
+                    }
 
-            .reactions {
-                display: inline-block;
-                color: $tertiary;
-                font-size: $font-size-sm;
-                  
-                @media only screen and (max-width: $tablet-sm) {
-                    margin-bottom: $margin-sm;
-                }
-
-                 .blog-icon {
-                    margin-right: $margin-sm;
+                    &:hover {
+                        color: $secondary;
+                    }
                 }
             }
+            .description {
+                color: $quaternary;
+                margin: 0;
 
+                @media only screen and (max-width: $tablet-lg) {
+                    display: none;
+                }
+            }
             .tags {
+                font-size: $font-size-sm;
+                font-weight: $font-semibold;
                 color: $secondary;
+                margin: 0;
             }
         }
     }
-
-    .blog-card:hover {
-        border-color: $secondary;
-        background: #161D2C85;
-        cursor: pointer; 
-    }
-    
 </style>
