@@ -1,6 +1,6 @@
 <template>
   <section class="about-introduction">
-    <h1>About</h1>
+    <h2>Introduction</h2>
     <div class="flex-row">
       <div class="about-content">
         <h3>Hi, I'm Sean Tansey. A Fullstack Software Engineer specializing in Frontend Development based out of Denver, Colorado.</h3>
@@ -32,12 +32,10 @@ export default {
 @import '@/styles/variables.scss';
 
   .about-introduction {
-    margin-bottom: $margin-section;
+    margin-bottom: $margin-xl;
 
-    h1 {
-      font-size: $font-size-header;
-      border-bottom: 1px solid $border-color;
-      padding-bottom: $padding-xs;
+    h2 {
+      font-size: $font-size-xl;
     }
     
     .flex-row {

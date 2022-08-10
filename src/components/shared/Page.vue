@@ -60,14 +60,9 @@ export default {
         position: relative;
         max-width: 1000px;
         margin: auto;
-        padding: 200px;
+        padding: 100px;
         padding-top: $padding-xl;
         min-height: 100%;
-
-        @media only screen and (max-width: $tablet-lg) {
-            padding-left: 100px;
-            padding-right: 100px;
-        }
 
         @media only screen and (max-width: $tablet-sm) {
             padding-left: 50px;
@@ -82,13 +77,10 @@ export default {
         .back-button {
           position: absolute;
           top: 40px;
-          left: 200px;
+          left: 100px;
           color: $secondary;
           text-decoration: none;
-
-          @media only screen and (max-width: $tablet-lg) {
-            left: 100px;
-          }
+          font-weight: $font-semibold;
 
           @media only screen and (max-width: $tablet-sm) {
             left: 50px;

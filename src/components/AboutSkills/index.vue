@@ -1,6 +1,6 @@
 <template>
   <section class="about-skills">
-   <h1>Skills</h1>
+   <h2>Skills</h2>
     <menu-selector 
       :selectors="categories"
       :selected-index="selectedCategoryIndex"
@@ -54,12 +54,10 @@ export default {
 @import '@/styles/variables.scss';
 
   .about-skills {
-    margin-bottom: $margin-section;
+    margin-bottom: $margin-xl;
 
-    h1 {
-      font-size: $font-size-header;
-      border-bottom: 1px solid $border-color;
-      padding-bottom: $padding-xs;
+    h2 {
+      font-size: $font-size-xl;
     }
 
     .logo-row {

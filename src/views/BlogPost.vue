@@ -1,7 +1,7 @@
 <template>
   <page back-button>
     <article class="blog-post">
-        <h1>{{ title }}</h1>
+        <h1><span class="fwd-slash">/</span>{{ title }}</h1>
         <img :src="cover">
         <p>Article sourced from dev.to via the dev.to API. View the original article @: <a :href="url" target="_blank">{{ url }}</a> </p>
         <div v-html="body"></div>
@@ -60,6 +60,11 @@ export default {
       border-bottom: 1px solid $tertiary;
       padding-bottom: $padding-xs;
       margin-bottom: 20px;
+
+      .fwd-slash {
+        color: $secondary;
+        margin-right: $margin-xs;
+      }
     }
 
     p {

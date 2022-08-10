@@ -1,7 +1,7 @@
 <template>
   <page>
     <section class="blog-feed">
-      <h1>Blog</h1>
+      <h1><span class="fwd-slash">/</span>Blog</h1>
       <h3>
           As a bootcamp/self taught developer I've struggled with some of the deeper CS concepts.
           These simply weren't things I was taught when I learned how to code. 
@@ -9,14 +9,12 @@
           I've learned many new concepts along the way and below is a collection of those lessons.
       </h3>
       <div v-if="posts.length" class="blog-post-list">
-        <p>All blog posts are pulled in from the dev.to API. To interact with any of these posts see my account @ <a href="https://dev.to/seantansey" target="_blank">dev.to/seantansey</a></p>
+        <p>All blog posts are pulled from the dev.to API. To interact with any of these posts see my account @ <a href="https://dev.to/seantansey" target="_blank">dev.to/seantansey</a></p>
         <blog-card
           v-for="post in posts"
           :key="post.id"
-          :comments="post.comments_count"
-          :date="post.created_at"
-          :reactions="post.positive_reactions_count"
-          :read-time="post.reading_time_minutes"
+          :description="post.description"
+          :img="post.social_image"
           :slug="post.slug"
           :tag-list="post.tag_list"
           :title="post.title"
@@ -63,6 +61,11 @@ export default {
       font-size: $font-size-header;
       border-bottom: 1px solid $border-color;
       padding-bottom: $padding-xs;
+
+       .fwd-slash {
+        color: $secondary;
+        margin-right: $margin-xs;
+      }
     }
 
     h3 {
